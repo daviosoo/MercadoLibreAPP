@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MercadoLibreAPP</string>
+    <string name="email">Email</string>
+    <string name="phone">Numero</string>
+    <string name="password">Contraseña</string>
+    <string name="identity">Identidad</string>
+    <string name="vacio">.</string>
 </resources>
