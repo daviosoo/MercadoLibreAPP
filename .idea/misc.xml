@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/drawable/bordes_redondos.xml" value="0.3365" />
-        <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="app/src/main/res/drawable/ic_bx_arrow_back.xml" value="0.188" />
+        <entry key="app/src/main/res/drawable/style_border.xml" value="0.188" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/borde.xml" value="0.1796875" />
       </map>
     </option>
   </component>

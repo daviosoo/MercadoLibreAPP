@@ -5,4 +5,9 @@
     <string name="continuar">continuar</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="ayuda_ingresar">Necesito ayuda para ingresar</string>
+    <string name="email">Email</string>
+    <string name="phone">Numero</string>
+    <string name="password">Contraseña</string>
+    <string name="identity">Identidad</string>
+    <string name="vacio">.</string>
 </resources>
