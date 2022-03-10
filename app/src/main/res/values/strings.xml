@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">MercadoLibreAPP</string>
+    <string name="ingresar_datos">ingresa tu telefono, e-mail o \n usuario</string>
+    <string name="titulo1">telefono, e-mail o usuario</string>
+    <string name="continuar">continuar</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="ayuda_ingresar">Necesito ayuda para ingresar</string>
     <string name="email">Email</string>
     <string name="phone">Numero</string>
     <string name="password">Contraseña</string>
