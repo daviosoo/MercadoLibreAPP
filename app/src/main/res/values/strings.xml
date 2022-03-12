@@ -2,7 +2,7 @@
     <string name="app_name">MercadoLibreAPP</string>
     <string name="ingresar_datos">Ingresa tu teléfono, e-mail o \nusuario</string>
     <string name="titulo1">Télefono, e-mail o usuario</string>
-    <string name="continuar">continuar</string>
+    <string name="continuar">Continuar</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="ayuda_ingresar">Necesito ayuda para ingresar</string>
     <string name="email">Email</string>
@@ -15,4 +15,7 @@
     <string name="login">Ingresar</string>
     <string name="dont_know_password">No sé mi clave</string>
     <string name="i_am_not">No soy</string>
+    <string name="board">Para crear tu cuenta necesitamos algunos datos</string>
+    <string name="board2">Solo te tomará unos minutos.</string>
+    <string name="ifuser">Si tienes una cuenta en mercado libre, no necesitas crear una nueva,Inicia sesion con ese mismo e-mail.</string>
 </resources>

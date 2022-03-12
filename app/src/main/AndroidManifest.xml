@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity
+            android:name=".LoginIconActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginPasswordActivity"
             android:exported="false" />
         <activity
