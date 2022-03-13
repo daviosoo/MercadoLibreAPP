@@ -18,4 +18,8 @@
     <string name="board">Para crear tu cuenta necesitamos algunos datos</string>
     <string name="board2">Solo te tomará unos minutos.</string>
     <string name="ifuser">Si tienes una cuenta en mercado libre, no necesitas crear una nueva,Inicia sesion con ese mismo e-mail.</string>
+    <string name="level">Nivel - Mercado puntos ></string>
+    <string name="hello">Hola Mr....</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
