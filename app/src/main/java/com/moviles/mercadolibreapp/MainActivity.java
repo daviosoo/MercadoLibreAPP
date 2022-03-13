@@ -36,7 +36,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.nav_home);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        navigationView.setItemIconTintList(null);
     }
+
 
     @Override
     public void onBackPressed() {
