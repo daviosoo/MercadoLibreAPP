@@ -22,4 +22,16 @@
     <string name="hello">Hola Mr....</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="ubication">Ingresa tu ubicacion ></string>
+    <string name="qr">Pagar con QR</string>
+    <string name="offer">Ofertas</string>
+    <string name="supermarket">Supermercado</string>
+    <string name="car">Carros,motos y otros</string>
+    <string name="plus">Ver más</string>
+    <string name="cardText1">Visto recientemente</string>
+    <string name="hpinfo">Hp 11a,11.6 Hd, Celeron</string>
+    <string name="hpinfo2">N3350, 4 Gb De Ram, 32 Gb ...</string>
+    <string name="hpvalue">$ 781.568</string>
+    <string name="hpfree">Envio gratis</string>
+    <string name="watchHistory">Ver historial de navegacion</string>
 </resources>
