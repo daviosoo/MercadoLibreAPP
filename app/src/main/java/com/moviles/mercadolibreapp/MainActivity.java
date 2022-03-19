@@ -19,14 +19,15 @@ import android.widget.LinearLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
-
-
+    RecyclerView recyclerView;
+    ArrayList<RecycleModel> recycleModels;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -47,6 +48,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         navigationView.setItemIconTintList(null);
+
+        recyclerView= findViewById(R.id.recycle_view);
+        Integer[] imgBanner = {R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen3,R.drawable.imagen4,R.drawable.imagen5};
+        recycleModels = new ArrayList<>();
+        for(int i=0;i<imgBanner.length;i++){
+            RecycleModel model = new RecycleModel(imgBanner[i]);
+            recycleModels.add(model);
+        }
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
+        recyclerView.setAdapter(recycleAdapter);
+
 
 
     }
