@@ -34,4 +34,9 @@
     <string name="hpvalue">$ 781.568</string>
     <string name="hpfree">Envio gratis</string>
     <string name="watchHistory">Ver historial de navegacion</string>
+    <string name="mercado">Mercado Pago</string>
+    <string name="recargar">Recargar celular</string>
+    <string name="billetera">Billetera</string>
+    <string name="descubre">Descubre</string>
+    <string name="todascategorias">Todas las categorias</string>
 </resources>

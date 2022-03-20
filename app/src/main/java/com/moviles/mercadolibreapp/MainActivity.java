@@ -14,11 +14,17 @@ import androidx.recyclerview.widget.SnapHelper;
 
 import android.content.res.ColorStateList;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -33,11 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     RecyclerView recyclerView;
     ArrayList<RecycleModel> recycleModels;
-    RecycleAdapter recycleAdapter;
-    Timer timer;
-    TimerTask timerTask;
-    int position;
     LinearLayoutManager layoutManager;
+    BottomSheetDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -72,30 +75,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
         recyclerView.setAdapter(recycleAdapter);
-        LinearSnapHelper snapHelper = new LinearSnapHelper();
-        snapHelper.attachToRecyclerView(recyclerView);
 
-
+        ImageButton btnshowmenu = findViewById(R.id.btnPlus);
+        btnshowmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
+                        MainActivity.this,R.style.BottomSheetDialogTheme
+                );
+                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
+                        R.layout.show_menu,(LinearLayout)findViewById(R.id.show_menu)
+                );
+                bottomSheetView.findViewById(R.id.btnqr2);
+                bottomSheetDialog.setContentView(bottomSheetView);
+                bottomSheetDialog.show();
+            }
+        });
     }
-
-
-
-
-    public void runAutoScroll(){
-            timer = new Timer();
-            timerTask = new TimerTask() {
-                @Override
-                public void run() {
-                    if (layoutManager.findLastCompletelyVisibleItemPosition() < (recycleAdapter.getItemCount() - 5)) {
-                        layoutManager.smoothScrollToPosition(recyclerView, new RecyclerView.State(), layoutManager.findLastCompletelyVisibleItemPosition() + 1);
-                    } else if (layoutManager.findLastCompletelyVisibleItemPosition() < (recycleAdapter.getItemCount() - 5)) {
-                        layoutManager.smoothScrollToPosition(recyclerView, new RecyclerView.State(), 0);
-                    }
-                }
-            };
-            timer.schedule(timerTask,3000);
-    }
-
 
     @Override
     public void onBackPressed() {
