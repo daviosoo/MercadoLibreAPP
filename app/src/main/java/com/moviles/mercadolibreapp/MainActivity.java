@@ -8,8 +8,11 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +23,8 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -28,6 +33,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     RecyclerView recyclerView;
     ArrayList<RecycleModel> recycleModels;
+    RecycleAdapter recycleAdapter;
+    Timer timer;
+    TimerTask timerTask;
+    int position;
+    LinearLayoutManager layoutManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -42,12 +53,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         navigationView.setItemIconTintList(null);
+        navigationView.setItemTextColor(ColorStateList.valueOf(getResources().getColor(R.color.black)));
 
         recyclerView= findViewById(R.id.recycle_view);
         Integer[] imgBanner = {R.drawable.imagen1,R.drawable.imagen2,R.drawable.imagen3,R.drawable.imagen4,R.drawable.imagen5};
@@ -56,14 +67,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             RecycleModel model = new RecycleModel(imgBanner[i]);
             recycleModels.add(model);
         }
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
 
         RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
         recyclerView.setAdapter(recycleAdapter);
+        LinearSnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+
+
+    }
 
 
 
+
+    public void runAutoScroll(){
+            timer = new Timer();
+            timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    if (layoutManager.findLastCompletelyVisibleItemPosition() < (recycleAdapter.getItemCount() - 5)) {
+                        layoutManager.smoothScrollToPosition(recyclerView, new RecyclerView.State(), layoutManager.findLastCompletelyVisibleItemPosition() + 1);
+                    } else if (layoutManager.findLastCompletelyVisibleItemPosition() < (recycleAdapter.getItemCount() - 5)) {
+                        layoutManager.smoothScrollToPosition(recyclerView, new RecyclerView.State(), 0);
+                    }
+                }
+            };
+            timer.schedule(timerTask,3000);
     }
 
 
