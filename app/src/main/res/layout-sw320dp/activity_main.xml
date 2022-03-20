@@ -102,11 +102,13 @@
                 android:layout_height="31dp"
                 android:background="@drawable/border_search"
                 android:backgroundTint="@color/white"
+                android:iconifiedByDefault="false"
                 app:layout_constraintBottom_toTopOf="@+id/toolbar"
                 app:layout_constraintEnd_toStartOf="@+id/guideline11"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline9"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                android:queryHint="@string/search"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline9"
