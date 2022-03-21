@@ -2,7 +2,7 @@
     <string name="app_name">MercadoLibreAPP</string>
     <string name="ingresar_datos">Ingresa tu teléfono, e-mail o \nusuario</string>
     <string name="titulo1">Télefono, e-mail o usuario</string>
-    <string name="continuar">continuar</string>
+    <string name="continuar">Continuar</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="ayuda_ingresar">Necesito ayuda para ingresar</string>
     <string name="email">Email</string>
@@ -14,5 +14,5 @@
     <string name="your_password">Clave</string>
     <string name="login">Ingresar</string>
     <string name="dont_know_password">No sé mi clave</string>
-    <string name="i_am_not">No soy</string>
+    <string name="i_am_not">No soy {e-mail}</string>
 </resources>

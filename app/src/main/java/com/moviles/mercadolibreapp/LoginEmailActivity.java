@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.moviles.mercadolibreapp.databinding.ActivityLoginEmailBinding;
 
-public class LoginEmailActivity extends AppCompatActivity implements View.OnClickListener{
+    public class LoginEmailActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ActivityLoginEmailBinding activityLoginEmailBinding;
     @Override
