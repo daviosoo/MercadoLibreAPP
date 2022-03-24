@@ -5,6 +5,10 @@
       <map>
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/drawable/bordes_redondos.xml" value="0.3365" />
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+<<<<<<< HEAD
+=======
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.387" />
+>>>>>>> main
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_button.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_image.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_list.xml" value="0.257" />
@@ -21,9 +25,18 @@
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_cart.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_email_black_24dp.xml" value="0.1385" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_market.xml" value="0.257" />
+<<<<<<< HEAD
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_phonr.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_plus.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_shopping.xml" value="0.257" />
+=======
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_mercado_libre_logo_background.xml" value="0.5" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_phonr.xml" value="0.257" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_plus.xml" value="0.257" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_shopping.xml" value="0.257" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/ic_wallet.xml" value="0.257" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/style_border.xml" value="0.169" />
+>>>>>>> main
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/font/.xml" value="0.4171875" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/font/adamina.xml" value="0.2564814814814815" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/font/poppins_extralight.xml" value="0.4171875" />
@@ -36,8 +49,14 @@
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_login_email.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_login_icon.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_login_password.xml" value="0.33" />
+<<<<<<< HEAD
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.45217391304347826" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.5" />
+=======
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_splash.xml" value="0.33" />
+>>>>>>> main
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/app_bar_home.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/content_home.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/fragment_home.xml" value="0.38697916666666665" />
@@ -46,10 +65,18 @@
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/nav_header_home.xml" value="0.67" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/productcard.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/row_item.xml" value="0.22" />
+<<<<<<< HEAD
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/show_menu.xml" value="0.5" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/activity_main_drawer.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/home.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/main_menu.xml" value="0.38697916666666665" />
+=======
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/show_menu.xml" value="0.3851851851851852" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/activity_main_drawer.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/home.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/main_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/mipmap-anydpi-v26/ic_mercado_libre_logo.xml" value="0.209" />
+>>>>>>> main
       </map>
     </option>
   </component>

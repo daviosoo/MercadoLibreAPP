@@ -14,6 +14,7 @@
     <string name="your_password">Clave</string>
     <string name="login">Ingresar</string>
     <string name="dont_know_password">No sé mi clave</string>
+<<<<<<< HEAD
     <string name="i_am_not">No soy</string>
     <string name="board">Para crear tu cuenta necesitamos algunos datos</string>
     <string name="board2">Solo te tomará unos minutos.</string>
@@ -40,4 +41,7 @@
     <string name="descubre">Descubre</string>
     <string name="todascategorias">Todas las categorias</string>
     <string name="search">Buscar en Mercado Libre</string>
+=======
+    <string name="i_am_not">No soy {e-mail}</string>
+>>>>>>> main
 </resources>

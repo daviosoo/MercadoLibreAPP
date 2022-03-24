@@ -8,7 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.Light.NoActionBar">
+        android:theme="@style/Theme.MercadoLibreAPP">
+
+        <activity
+            android:name="com.moviles.mercadolibreapp.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".LoginIconActivity"
             android:exported="false" />
@@ -16,6 +26,7 @@
             android:name=".LoginPasswordActivity"
             android:exported="false" />
         <activity
+<<<<<<< HEAD
             android:name=".HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait">
@@ -32,6 +43,10 @@
             android:name=".LoginEmailActivity"
             android:exported="false" />
 
+=======
+            android:name=".LoginEmailActivity"
+            android:exported="false" />
+>>>>>>> main
 
     </application>
 
