@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity"
+    tools:context=".HomeActivity"
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView

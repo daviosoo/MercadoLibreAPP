@@ -29,7 +29,7 @@ public class LoginIconActivity extends AppCompatActivity implements View.OnClick
                 startActivity(intentBack);
                 break;
             case R.id.btn_iconLogin:
-                Intent intentNext = new Intent(this,com.moviles.mercadolibreapp.MainActivity.class);
+                Intent intentNext = new Intent(this, HomeActivity.class);
                 startActivity(intentNext);
 
         }

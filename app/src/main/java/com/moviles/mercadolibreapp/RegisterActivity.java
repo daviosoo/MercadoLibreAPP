@@ -3,7 +3,6 @@ package com.moviles.mercadolibreapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.PatternsCompat;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -33,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intent = new Intent(this, com.moviles.mercadolibreapp.MainActivity.class);
+                Intent intent = new Intent(this, HomeActivity.class);
                 startActivity(intent);
                 break;
 
