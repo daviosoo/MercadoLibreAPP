@@ -11,7 +11,7 @@
         android:id="@+id/etUserPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="380dp"
+        android:layout_marginBottom="404dp"
         android:background="@drawable/bordes_redondos"
         android:inputType="textPersonName"
         android:minHeight="48dp"

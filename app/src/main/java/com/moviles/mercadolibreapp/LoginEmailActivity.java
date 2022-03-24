@@ -36,6 +36,7 @@ import com.moviles.mercadolibreapp.databinding.ActivityLoginEmailBinding;
                 break;
             case R.id.btnContinue:
                 Intent intentContinue = new Intent(this, com.moviles.mercadolibreapp.LoginPasswordActivity.class);
+                intentContinue.putExtra("email",activityLoginEmailBinding.etUserPassword.getText().toString());
                 startActivity(intentContinue);
                 break;
         }
