@@ -1,5 +1,6 @@
 package com.moviles.mercadolibreapp;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.util.PatternsCompat;
 
@@ -8,11 +9,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.moviles.mercadolibreapp.Interface.RegisterParse;
+import com.moviles.mercadolibreapp.Interface.RegisterUser;
+import com.moviles.mercadolibreapp.Model.Register;
 import com.moviles.mercadolibreapp.databinding.ActivityRegisterBinding;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityRegisterBinding activityRegisterBinding;
+    public Register user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +50,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 startActivity(intent);
                 break;
 
-            //case R.id.btnRegister:
+            case R.id.btnRegister:
+                setUser();
                 //Toast toast = Toast.makeText(this, "Registro completo", Toast.LENGTH_SHORT);
         }
     }
 
-    public void Registrar(View view){
+    /*public void Registrar(View view){
         String email = activityRegisterBinding.etEmail.toString();
         String identity = activityRegisterBinding.etIdentity.toString();
         String phone = activityRegisterBinding.etNumber.toString();
@@ -73,5 +88,51 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 password.length()>=10){
             Toast.makeText(this,"Registro en proceso...",Toast.LENGTH_LONG).show();
         }
+    }*/
+
+    public void setUser(){
+        user=new Register();
+        user.setIdentificacion(activityRegisterBinding.etIdentity.getText().toString());
+        user.setEmail(activityRegisterBinding.etEmail.getText().toString());
+        user.setCelular(activityRegisterBinding.etNumber.getText().toString());
+        user.setContra(activityRegisterBinding.etPassword.getText().toString());
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.24.115:80/MercadoLibreAPI/features/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RegisterUser registerUser = retrofit.create(RegisterUser.class);
+        Call<String> call = registerUser.setUser(user);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(!response.isSuccessful()){
+                    //activityLoginPasswordBinding.txtPrueba.setText("codigo"+response.code());
+                    return;
+                }
+
+                String respuesta = response.body();
+                if (respuesta.equals("Exito en el registro")){
+                    AlertDialog.Builder mensaje = new AlertDialog.Builder(RegisterActivity.this);
+                    mensaje.setMessage(respuesta);
+                    mensaje.setTitle("REGISTRADO");
+                    mensaje.show();
+                }else{
+                    AlertDialog.Builder mensaje = new AlertDialog.Builder(RegisterActivity.this);
+                    mensaje.setMessage("fallo en el registro ok");
+                    mensaje.setTitle("ERROR");
+                    mensaje.show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                AlertDialog.Builder mensaje = new AlertDialog.Builder(RegisterActivity.this);
+                mensaje.setMessage(t.getMessage());
+                mensaje.setTitle("ERROR");
+                mensaje.show();
+            }
+        });
     }
 }
