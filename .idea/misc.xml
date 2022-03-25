@@ -5,10 +5,6 @@
       <map>
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/drawable/bordes_redondos.xml" value="0.3365" />
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/carlos.velez/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_login_email.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/carlos.velez/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_login_password.xml" value="0.5" />
-        <entry key="..\:/Users/carlos.velez/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/carlos.velez/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.387" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_button.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_image.xml" value="0.257" />
@@ -47,6 +43,7 @@
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_splash.xml" value="0.33" />
+
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/app_bar_home.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/content_home.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/fragment_home.xml" value="0.38697916666666665" />

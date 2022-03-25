@@ -45,7 +45,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intentBack = new Intent(this, com.moviles.mercadolibreapp.MainActivity.class);
+                Intent intentBack = new Intent(this, HomeActivity.class);
                 startActivity(intentBack);
                 break;
             case R.id.btnLogin:
