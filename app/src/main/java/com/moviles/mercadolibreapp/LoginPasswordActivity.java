@@ -45,7 +45,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intentBack = new Intent(this, HomeActivity.class);
+                Intent intentBack = new Intent(this, MainActivity.class);
                 startActivity(intentBack);
                 break;
             case R.id.btnLogin:
@@ -67,7 +67,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.24.115:80/MercadoLibreAPI/features/")
+                .baseUrl("http://172.18.75.135:80/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -87,6 +87,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
                     mensaje.setTitle("ingresando");
                     mensaje.show();
 
+
                 /*for(Register register: listUSer){
                     String content = "";
                     content+="identificacion:" + register.getIdentificacion()+"\n";
@@ -95,6 +96,8 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
                     content+="contra:" + register.getContra()+"\n";
                     activityLoginPasswordBinding.txtPrueba.append(content);
                 }*/
+                Intent intent = new Intent(LoginPasswordActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
 
             @Override

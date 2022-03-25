@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnSkip:
-                //Intent intentSkip = new Intent(this, com.moviles.mercadolibreapp.HomeActivity.class);
-                //startActivity(intentSkip);
+                Intent intentSkip = new Intent(this, com.moviles.mercadolibreapp.HomeActivity.class);
+                startActivity(intentSkip);
                 break;
             case R.id.btnContinueRegister:
                 Intent intentRegister = new Intent(this, com.moviles.mercadolibreapp.RegisterActivity.class);

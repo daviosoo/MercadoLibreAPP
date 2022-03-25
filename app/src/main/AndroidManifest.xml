@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginIconActivity"
             android:exported="false" />
         <activity

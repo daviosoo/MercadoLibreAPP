@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intent = new Intent(this, HomeActivity.class);
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 break;
 
@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         user.setContra(activityRegisterBinding.etPassword.getText().toString());
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.24.115:80/MercadoLibreAPI/features/")
+                .baseUrl("http://172.18.75.135:80/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -118,6 +118,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     mensaje.setMessage(respuesta);
                     mensaje.setTitle("REGISTRADO");
                     mensaje.show();
+                    Intent intent = new Intent(RegisterActivity.this, LoginEmailActivity.class);
+                    startActivity(intent);
                 }else{
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(RegisterActivity.this);
                     mensaje.setMessage("fallo en el registro ok");
