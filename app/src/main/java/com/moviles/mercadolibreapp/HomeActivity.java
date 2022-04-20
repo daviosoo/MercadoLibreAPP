@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     ArrayList<RecycleModel> recycleModels;
     LinearLayoutManager layoutManager;
     BottomSheetDialog dialog;
+    ImageButton buttonOpenDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -71,15 +72,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnshowmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        HomeActivity.this,R.style.BottomSheetDialogTheme
-                );
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.show_menu,(LinearLayout)findViewById(R.id.show_menu)
-                );
-                bottomSheetView.findViewById(R.id.btnqr2);
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.show(getSupportFragmentManager(),"TAG");
+
             }
         });
     }

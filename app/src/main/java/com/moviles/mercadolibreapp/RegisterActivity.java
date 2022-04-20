@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, LoginIconActivity.class);
                 startActivity(intent);
                 break;
 
