@@ -40,4 +40,5 @@
     <string name="todascategorias">Todas las categorias</string>
     <string name="search">Buscar en Mercado Libre</string>
     <string name="i_am_not">No soy {e-mail}</string>
+    <string name="cart">Carrito (0)</string>
 </resources>

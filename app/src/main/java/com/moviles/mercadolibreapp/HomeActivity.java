@@ -9,11 +9,13 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
@@ -32,6 +34,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     ArrayList<RecycleModel> recycleModels;
     LinearLayoutManager layoutManager;
     BottomSheetDialog dialog;
+    ImageButton cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -41,6 +44,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+        cart = findViewById(R.id.btnShopping);
 
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -80,6 +84,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 bottomSheetView.findViewById(R.id.btnqr2);
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
+            }
+        });
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                startActivity(intentCart);
             }
         });
     }

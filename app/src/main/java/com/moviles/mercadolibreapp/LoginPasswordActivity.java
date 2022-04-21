@@ -13,6 +13,7 @@ import com.moviles.mercadolibreapp.Model.Register;
 import com.moviles.mercadolibreapp.databinding.ActivityLoginPasswordBinding;
 
 import java.util.List;
+import java.util.function.ToIntFunction;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -87,16 +88,20 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
                     mensaje.setTitle("ingresando");
                     mensaje.show();
 
+                int identification = 0;
 
-                /*for(Register register: listUSer){
+                for(Register register: listUSer){
                     String content = "";
+                    identification = Integer.parseInt(register.getIdentificacion());
                     content+="identificacion:" + register.getIdentificacion()+"\n";
                     content+="email:" + register.getEmail()+"\n";
                     content+="celular:" + register.getCelular()+"\n";
                     content+="contra:" + register.getContra()+"\n";
                     activityLoginPasswordBinding.txtPrueba.append(content);
-                }*/
+                }
+
                 Intent intent = new Intent(LoginPasswordActivity.this, HomeActivity.class);
+                intent.putExtra("identification_usuario", identification);
                 startActivity(intent);
             }
 
