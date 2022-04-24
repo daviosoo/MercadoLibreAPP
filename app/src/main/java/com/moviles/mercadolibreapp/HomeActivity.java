@@ -48,16 +48,16 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_home);
 
         readPreferences();
+        navigationView = findViewById(R.id.nav_view);
 
         if (!status.isEmpty()){
 
-            TextView user = findViewById(R.id.txtUser);
+            TextView user = findViewById(R.id.ubication);
             user.setText(email);
 
         }
 
         drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         cart = findViewById(R.id.btnShopping);
 

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.moviles.mercadolibreapp.Interface.CartService;
 import com.moviles.mercadolibreapp.Model.Producto;
@@ -38,6 +39,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(view);
 
         activityCartBinding.btnBack.setOnClickListener(this);
+        readPreferences();
+        Toast.makeText(this, Integer.toString(identificacion), Toast.LENGTH_SHORT).show();
+        getCart();
     }
 
     @Override
@@ -53,7 +57,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     public void getCart(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.16.60.201:8081/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.24/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -68,10 +72,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     List<Producto> productosCarrito = response.body();
 
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
-                    mensaje.setMessage(productosCarrito.get(0).getId());
-                    mensaje.setMessage(productosCarrito.get(0).getPrecio());
-                    mensaje.setMessage(productosCarrito.get(0).getCantidad());
-                    mensaje.setTitle(productosCarrito.get(0).getNombre());
+
+                    String message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad_producto());
+                    mensaje.setMessage(message);
+                    mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
                     mensaje.show();
 
                 }
@@ -87,9 +91,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void readPreferences(){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference) ,Context.MODE_PRIVATE);
         status = sharedPref.getString("Status", "");
-        identificacion = sharedPref.getInt("Identificación", 0);
+        identificacion = sharedPref.getInt(getString(R.string.Identificacion), 0);
     }
 
 }

@@ -76,12 +76,12 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
         editor.putString( getString(R.string.Email) , Email);
         editor.putInt( getString(R.string.Identificacion), identificacion);
         editor.putString( getString(R.string.Status), "Logged");
-        editor.commit();
+        editor.apply();
     }
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.16.60.201:8081/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.24/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -101,15 +101,8 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
                     mensaje.setTitle("ingresando");
                     mensaje.show();
 
-                int identification = 0;
-
                 for(Register register: listUSer){
-                    String content = "";
                     identificacion = Integer.parseInt(register.getIdentificacion());
-                    content+="identificacion:" + register.getIdentificacion()+"\n";
-                    content+="email:" + register.getEmail()+"\n";
-                    content+="celular:" + register.getCelular()+"\n";
-                    content+="contra:" + register.getContra()+"\n";
                 }
 
                 Intent intent = new Intent(LoginPasswordActivity.this, HomeActivity.class);
