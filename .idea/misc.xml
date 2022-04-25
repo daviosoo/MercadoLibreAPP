@@ -3,8 +3,50 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/border_list2.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_badge_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_bx_car.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_car.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_cart.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_descuento.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_desktop.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_email_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_lock_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_mercadopago.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/drawable/ic_phone_android_black_24dp.xml" value="0.1945" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout-sw320dp/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout-sw480dp/row_item.xml" value="0.153125" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/activity_home.xml" value="1.3464285714285715" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/activity_login_icon.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/header.xml" value="0.67" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/row_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPP/app/src/main/res/layout/show_menu.xml" value="0.22" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout-sw320dp/activity_home.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_home.xml" value="1.3464285714285715" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_login_icon.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_offerts.xml" value="0.25" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/header.xml" value="0.5" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/item_producto.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/308/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/productscards.xml" value="0.2" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout-sw320dp/activity_home.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_home.xml" value="0.5" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_offerts.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/header.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/productscards.xml" value="0.25" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/row_item.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/show_menu.xml" value="0.1675929884566054" />
+        <entry key="..\:/Users/505/Documents/MercadoLibreAPPSalon/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/drawable/bordes_redondos.xml" value="0.3365" />
         <entry key="..\:/Users/Administrador.ALEXANDER/Desktop/moviles2/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Administrador.ALEXANDER/Documents/MercadoLibreAPPSalon/app/src/main/res/drawable/line.xml" value="0.2065" />
+        <entry key="..\:/Users/Administrador.ALEXANDER/Documents/MercadoLibreAPPSalon/app/src/main/res/layout-sw320dp/activity_home.xml" value="0.1633176571184267" />
+        <entry key="..\:/Users/Administrador.ALEXANDER/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/activity_cart.xml" value="0.3142368533561351" />
+        <entry key="..\:/Users/Administrador.ALEXANDER/Documents/MercadoLibreAPPSalon/app/src/main/res/layout/item_list.xml" value="0.3142368533561351" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.387" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_button.xml" value="0.257" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/drawable/border_image.xml" value="0.257" />
@@ -43,7 +85,6 @@
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/activity_splash.xml" value="0.33" />
-
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/app_bar_home.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/content_home.xml" value="0.33" />
         <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/fragment_home.xml" value="0.38697916666666665" />

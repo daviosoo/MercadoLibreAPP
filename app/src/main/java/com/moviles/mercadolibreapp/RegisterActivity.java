@@ -46,7 +46,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         switch (view.getId()){
             case R.id.btnBack:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, LoginIconActivity.class);
                 startActivity(intent);
                 break;
 
@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         user.setContra(activityRegisterBinding.etPassword.getText().toString());
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.75.135:80/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.9/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

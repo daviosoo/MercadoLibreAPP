@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentSkip);
                 break;
             case R.id.btnContinueRegister:
-                Intent intentRegister = new Intent(this, com.moviles.mercadolibreapp.RegisterActivity.class);
+                Intent intentRegister = new Intent(this, com.moviles.mercadolibreapp.LoginIconActivity.class);
                 startActivity(intentRegister);
                 break;
             case R.id.btnContinueLogin:

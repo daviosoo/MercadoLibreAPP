@@ -3,20 +3,24 @@
     package="com.moviles.mercadolibreapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.MercadoLibreAPP">
-
-
-
+        android:theme="@style/Theme.MercadoLibreAPP"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name="com.moviles.mercadolibreapp.SplashActivity"
-            android:exported="true" >
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OffertsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,15 +39,13 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginEmailActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>
