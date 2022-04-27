@@ -57,7 +57,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     public void getCart(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.24/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.5/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -72,10 +72,21 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     List<Producto> productosCarrito = response.body();
 
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
+                    String message;
 
-                    String message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad_producto());
+                    if (productosCarrito.size() > 0)
+                    {
+                        message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad_producto());
+                        mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
+
+                    }
+                    else
+                    {
+                        message = "No hay productos en el carrito";
+                        mensaje.setTitle("Aviso");
+                    }
+
                     mensaje.setMessage(message);
-                    mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
                     mensaje.show();
 
                 }

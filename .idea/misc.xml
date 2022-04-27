@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout-sw480dp/activity_home.xml" value="0.18666666666666668" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/row_item.xml" value="0.3136344449134656" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/layout/show_menu.xml" value="0.3136344449134656" />
+        <entry key="..\:/Users/davos/AndroidStudioProjects/MercadoLibreAPP/app/src/main/res/menu/main_menu.xml" value="0.3136344449134656" />
         <entry key="app/src/main/res/layout-sw320dp/activity_home.xml" value="0.24705882352941178" />
         <entry key="app/src/main/res/layout/header.xml" value="0.1" />
       </map>

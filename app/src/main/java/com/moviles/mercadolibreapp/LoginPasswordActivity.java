@@ -81,7 +81,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.24/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.5/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
