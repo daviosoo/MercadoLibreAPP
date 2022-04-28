@@ -9,21 +9,24 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
+import com.moviles.mercadolibreapp.databinding.ActivityHomeBinding;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -33,6 +36,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     LinearLayoutManager layoutManager;
     BottomSheetDialog dialog;
     ImageButton buttonOpenDialog;
+    ImageButton cart;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -64,7 +70,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-
+        cart = findViewById(R.id.btnShopping);
         RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
         recyclerView.setAdapter(recycleAdapter);
 
@@ -74,6 +80,41 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 BottomSheet bottomSheet = new BottomSheet();
                 bottomSheet.show(getSupportFragmentManager(),"TAG");
+
+            }
+        });
+
+        ImageButton btnOffer = findViewById(R.id.btnOffer);
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnOffer:
+                Intent intent = new Intent(this, OffertsActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.btnShopping:
+                Intent intentShopping = new Intent(this, HomeActivity.class);
+                startActivity(intentShopping);
+                break;
+        }
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                /*if (!status.isEmpty()){
+                    Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                    startActivity(intentCart);
+                }
+                else
+                {
+                    Intent intentLogin = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
+                    startActivity(intentLogin);
+                }*/
+                Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                startActivity(intentCart);
+
 
             }
         });

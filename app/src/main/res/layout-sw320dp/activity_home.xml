@@ -238,6 +238,7 @@
             android:background="@drawable/border_list"
             android:backgroundTint="@color/white"
             android:elevation="5dp"
+            android:onClick="onClick"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/btnBag"
             app:layout_constraintHorizontal_bias="0.5"
@@ -899,7 +900,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cdSuscribete"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp"
+            android:layout_marginEnd="20dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1028,7 +1030,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/celulares"
+                        android:text="Electronica, Audio y Video"
                         android:textColor="@color/black"
                         android:textSize="14dp"
                         android:fontFamily="@font/pronova"
@@ -1056,7 +1058,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/celulares"
+                        android:text="@string/deportes"
                         android:textColor="@color/black"
                         android:textSize="14dp"
                         android:fontFamily="@font/pronova"
@@ -1084,7 +1086,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/celulares"
+                        android:text="@string/carros"
                         android:textColor="@color/black"
                         android:textSize="14dp"
                         android:fontFamily="@font/pronova"
