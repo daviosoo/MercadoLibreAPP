@@ -8,31 +8,24 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -44,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     ImageButton cart;
     String status;
     String email;
+    ImageButton buttonOpenDialog;
 
 
     @SuppressLint("ResourceType")
@@ -88,7 +82,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-
         RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
         recyclerView.setAdapter(recycleAdapter);
 
@@ -96,21 +89,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         btnshowmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        HomeActivity.this,R.style.BottomSheetDialogTheme
-                );
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.show_menu,(LinearLayout)findViewById(R.id.show_menu)
-                );
-                bottomSheetView.findViewById(R.id.btnqr2);
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.show(getSupportFragmentManager(),"TAG");
+
             }
         });
 
-
-
         cart.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
 
@@ -124,9 +110,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(intentLogin);
                 }
 
-
             }
         });
+
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btnOffer:
+                Intent intent = new Intent(this, OffertsActivity.class);
+                startActivity(intent);
+                break;
+        }
+
     }
 
     @Override
@@ -169,5 +165,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return true;
+
     }
 }
