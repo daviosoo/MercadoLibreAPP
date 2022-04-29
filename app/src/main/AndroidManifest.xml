@@ -12,41 +12,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MercadoLibreAPP"
         android:usesCleartextTraffic="true">
+
         <activity
             android:name=".CartActivity"
-            android:exported="false">
+            android:exported="false"/>
 
-        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <activity
             android:name=".LoginIconActivity"
             android:exported="false" />
+
         <activity
             android:name=".LoginPasswordActivity"
             android:exported="false" />
+
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"/>
 
-        </activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".LoginEmailActivity"
             android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

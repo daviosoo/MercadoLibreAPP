@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_bx_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_bx_search_alt_2"
+            android:title="@string/menu_search" />
+        <item
+            android:id="@+id/nav_bell"
+            android:icon="@drawable/ic_bx_bell"
+            android:title="@string/menu_bell" />
+        <item
+            android:icon="@drawable/ic_bx_shopping_bag"
+            android:title="@string/menu_shop" />
+        <item
+            android:icon="@drawable/ic_bx_heart"
+            android:title="@string/menu_favorite" />
+        <item
+            android:icon="@drawable/ic_bx_purchase_tag_alt"
+            android:title="@string/menu_offer" />
+        <item
+            android:icon="@drawable/ic_bx_play_circle"
+            android:title="@string/menu_movies" />
+        <item
+            android:icon="@drawable/ic_bx_history"
+            android:title="@string/menu_history" />
+        <item
+            android:icon="@drawable/ic_user"
+            android:title="@string/menu_user" />
+        <item
+            android:icon="@drawable/ic_bx_headphone"
+            android:title="@string/menu_help" />
+    </group>
+
+    <group>
+        <item
+            android:icon="@drawable/ic_bx_basket"
+            android:title="@string/menu_super" />
+        <item
+            android:icon="@drawable/ic_bxs_t_shirt"
+            android:title="@string/menu_moda" />
+        <item
+            android:icon="@drawable/ic_bx_world"
+            android:title="@string/menu_world" />
+        <item
+            android:icon="@drawable/ic_bx_store"
+            android:title="@string/menu_shops" />
+        <item
+            android:icon="@drawable/ic_bx_category"
+            android:title="@string/menu_category" />
+    </group>
+    <group >
+        <item
+            android:icon="@drawable/ic_bx_spreadsheet"
+            android:title="@string/menu_sheet" />
+        <item
+            android:icon="@drawable/ic_bx_purchase_tag"
+            android:title="@string/menu_buy" />
+        <item
+            android:icon="@drawable/ic_bx_store"
+            android:title="@string/menu_shops2" />
+    </group>
+</menu>
