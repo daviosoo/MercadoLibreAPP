@@ -14,7 +14,7 @@
     <string name="your_password">Clave</string>
     <string name="login">Ingresar</string>
     <string name="dont_know_password">No sé mi clave</string>
-    <string name="board">Para crear tu cuenta necesitamos algunos datos</string>
+    <string name="board">Para crear tu cuenta \n necesitamos algunos datos</string>
     <string name="board2">Solo te tomará unos minutos.</string>
     <string name="ifuser">Si tienes una cuenta en mercado libre, no necesitas crear una nueva,Inicia sesion con ese mismo e-mail.</string>
     <string name="level">Nivel - Mercado puntos ></string>
@@ -26,11 +26,11 @@
     <string name="car">Carros,motos y otros</string>
     <string name="plus">Ver más</string>
     <string name="cardText1">Visto recientemente</string>
-    <string name="hpinfo">Hp 11a,11.6 Hd, Celeron</string>
+    <string name="hpinfo">Laptop Hp 11a,11.6 Hd, Celeron</string>
     <string name="hpinfo2">N3350, 4 Gb De Ram, 32 Gb ...</string>
     <string name="hpvalue">$ 781.568</string>
     <string name="hpfree">Envio gratis</string>
-    <string name="watchHistory">Ver historial de navegacion</string>
+    <string name="watchHistory">Ver historial de navegacion    ></string>
     <string name="mercado">Mercado Pago</string>
     <string name="recargar">Recargar celular</string>
     <string name="billetera">Billetera</string>
@@ -70,4 +70,18 @@
     <string name="menu_shops2">Mercado Shops</string>
     <string name="greeting">Hola</string>
     <string name="location">Ingresa tu ubicacion ></string>
+    <string name="susdisney">Suscribete al nivel 6 por $ 46.645/mes</string>
+    <string name="enviocar">Envio gratis</string>
+    <string name="enviocar2">en millones de productos</string>
+    <string name="envios">Envios gratis y rapidos desde \n $70.000 y 40% OFF en envios de \n menos de $70.000</string>
+    <string name="desc">Mas descuentos con Mercado Pago</string>
+    <string name="sus">Suscribete</string>
+    <string name="categorias">Categorias</string>
+    <string name="celulares">Celulares y Telefonos</string>
+    <string name="computacion">Computacion</string>
+    <string name="belleza">Belleza y Cuidado Personal</string>
+    <string name="electronica">Electronica,Audio y Video</string>
+    <string name="deportes">Deportes y Fitness</string>
+    <string name="carros">Carros,Motos y Otros</string>
+    <string name="vercategorias">Ver todas las categorias</string>
 </resources>

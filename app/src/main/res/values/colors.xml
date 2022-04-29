@@ -16,4 +16,6 @@
     <color name="blue_light">#3587F2</color>
     <color name="blue_dark">#2D3773</color>
     <color name="gray_Text">#757575</color>
+    <color name="gray_light">#e7e7e7</color>
+
 </resources>

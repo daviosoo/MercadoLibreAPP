@@ -86,7 +86,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                         int valorTotalCarrito = 0;
 
                         for (Producto producto:
-                             productosCarrito) {
+                                productosCarrito) {
 
                             int totalProducto = producto.getCantidad_producto() * producto.getPrecio_producto();
 

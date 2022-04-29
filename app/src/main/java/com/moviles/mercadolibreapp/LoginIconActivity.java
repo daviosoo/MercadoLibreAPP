@@ -25,11 +25,11 @@ public class LoginIconActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_backIconL:
-                Intent intentBack = new Intent(this,com.moviles.mercadolibreapp.RegisterActivity.class);
+                Intent intentBack = new Intent(this,com.moviles.mercadolibreapp.MainActivity.class);
                 startActivity(intentBack);
                 break;
             case R.id.btn_iconLogin:
-                Intent intentNext = new Intent(this, HomeActivity.class);
+                Intent intentNext = new Intent(this, RegisterActivity.class);
                 startActivity(intentNext);
 
         }

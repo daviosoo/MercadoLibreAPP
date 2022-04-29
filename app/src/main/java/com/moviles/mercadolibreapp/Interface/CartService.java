@@ -1,7 +1,6 @@
 package com.moviles.mercadolibreapp.Interface;
 
 import com.moviles.mercadolibreapp.Model.Producto;
-import com.moviles.mercadolibreapp.Model.Register;
 
 import java.util.List;
 
