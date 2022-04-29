@@ -44,43 +44,42 @@
             android:id="@+id/nav_help"
             android:title="Ayuda / PQR"
             android:icon="@drawable/ic_headphone"/>
-    </group>
-
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_market"
-            android:title="Supermercado"
-            android:icon="@drawable/ic_market"/>
         <item
             android:id="@+id/nav_fashion"
-            android:title="Moda"
-            android:icon="@drawable/ic_shirt"/>
+            android:icon="@drawable/ic_shirt"
+            android:title="Moda" />
         <item
             android:id="@+id/nav_international"
-            android:title="Compra Internacional"
-            android:icon="@drawable/ic_world"/>
+            android:icon="@drawable/ic_world"
+            android:title="Compra Internacional" />
         <item
             android:id="@+id/nav_shop"
-            android:title="Tiendas oficiales"
-            android:icon="@drawable/ic_store"/>
+            android:icon="@drawable/ic_store"
+            android:title="Tiendas oficiales" />
         <item
             android:id="@+id/nav_category"
-            android:title="Categorías"
-            android:icon="@drawable/ic_category"/>
-    </group>
-
-    <group android:checkableBehavior="single">
+            android:icon="@drawable/ic_category"
+            android:title="Categorías" />
         <item
-            android:id="@+id/nav_resume"
-            android:title="Resumen"
-            android:icon="@drawable/ic_spreadsheet"/>
-        <item
-            android:id="@+id/nav_seller"
-            android:title="Vender"
-            android:icon="@drawable/ic_seller"/>
+            android:id="@+id/nav_market"
+            android:icon="@drawable/ic_market"
+            android:title="Supermercado" />
         <item
             android:id="@+id/nav_store"
-            android:title="Mercado Shops"
-            android:icon="@drawable/ic_store"/>
+            android:icon="@drawable/ic_store"
+            android:title="Mercado Shops" />
+        <item
+            android:id="@+id/nav_seller"
+            android:icon="@drawable/ic_seller"
+            android:title="Vender" />
+        <item
+            android:id="@+id/nav_resume"
+            android:icon="@drawable/ic_spreadsheet"
+            android:title="Resumen" />
+        <item
+            android:id="@+id/nav_session"
+            android:icon="@drawable/ic_user_circle"
+            android:title="Cerrar sesión" />
     </group>
+
 </menu>

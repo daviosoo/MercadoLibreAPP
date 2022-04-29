@@ -9,12 +9,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -42,12 +45,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     String status;
     String email;
 
+
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         readPreferences();
+
         navigationView = findViewById(R.id.nav_view);
 
         if (!status.isEmpty()){
@@ -102,17 +108,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
+
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if (!status.isEmpty()){
-                    Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                    Intent intentCart = new Intent(HomeActivity.this, CartActivity.class);
                     startActivity(intentCart);
                 }
                 else
                 {
-                    Intent intentLogin = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
+                    Intent intentLogin = new Intent(HomeActivity.this, LoginEmailActivity.class);
                     startActivity(intentLogin);
                 }
 
@@ -141,6 +149,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+
+            case R.id.nav_home:
+                break;
+            case R.id.nav_session:
+
+                SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference),Context.MODE_PRIVATE);
+                sharedPref.edit().clear().apply();
+
+                Intent  intent = new Intent(this, HomeActivity.class);
+                this.finish();
+                startActivity(intent);
+
+                Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_LONG).show();
+                break;
+        }
+
         return true;
     }
 }

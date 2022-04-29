@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.moviles.mercadolibreapp.Interface.CartService;
@@ -73,11 +74,28 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
                     String message;
+                    TextView valorCarrito = findViewById(R.id.txtTotalCarrito);
+                    TextView cantidaCarrito = findViewById(R.id.txtCantidadCarrito);
 
                     if (productosCarrito.size() > 0)
                     {
+                        cantidaCarrito.setText("Carrito ("+ productosCarrito.size() +")");
                         message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad_producto());
                         mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
+
+                        int valorTotalCarrito = 0;
+
+                        for (Producto producto:
+                             productosCarrito) {
+
+                            int totalProducto = producto.getCantidad_producto() * producto.getPrecio_producto();
+
+                            valorTotalCarrito += totalProducto;
+
+                        }
+
+                        valorCarrito.setText("$" + valorTotalCarrito);
+
 
                     }
                     else
@@ -90,6 +108,8 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     mensaje.show();
 
                 }
+
+
 
             }
 
