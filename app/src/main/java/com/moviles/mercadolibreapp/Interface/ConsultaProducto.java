@@ -1,6 +1,7 @@
 package com.moviles.mercadolibreapp.Interface;
 import com.moviles.mercadolibreapp.Model.Producto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -10,5 +11,5 @@ import retrofit2.http.Query;
 
 public interface ConsultaProducto {
     @GET("consultaImagen/imagen.php")
-    Call<List<Producto>> getProduc();
+    Call<ArrayList<Producto>> getProduc();
 }

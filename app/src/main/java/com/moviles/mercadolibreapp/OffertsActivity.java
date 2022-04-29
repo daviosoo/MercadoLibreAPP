@@ -26,11 +26,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class OffertsActivity extends AppCompatActivity {
-    RecyclerView dataList;
-    ArrayList<ListProducts> listProducts;
-    ListProductsAdapter adapter;
 
+    //ArrayList<ListProducts> listProducts;
     private ActivityOffertsBinding activityOffertsBinding;
+    ArrayList<Producto> listaProductos;
+    ProductoAdapter adapter;
+    RecyclerView dataList;
+
+
 
 
     @Override
@@ -39,36 +42,40 @@ public class OffertsActivity extends AppCompatActivity {
         activityOffertsBinding = ActivityOffertsBinding.inflate(getLayoutInflater());
         View view = activityOffertsBinding.getRoot();
         setContentView(view);
-        dataList = findViewById(R.id.products);
-        instancia();
 
+        listaProductos = new ArrayList<>();
+        adapter= new ProductoAdapter(listaProductos,this);
+        activityOffertsBinding.products.setHasFixedSize(true);
+        activityOffertsBinding.products.setLayoutManager(new LinearLayoutManager(this));
+        activityOffertsBinding.products.setAdapter(adapter);
+        //dataList = activityOffertsBinding.products;
 
-        adapter= new ListProductsAdapter(this,listProducts);
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
-        dataList.setLayoutManager(gridLayoutManager);
-        dataList.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.9/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.7/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         ConsultaProducto consultaProducto = retrofit.create(ConsultaProducto.class);
-        Call<List<Producto>> call = consultaProducto.getProduc();
-        call.enqueue(new Callback<List<Producto>>() {
+        Call<ArrayList<Producto>> call = consultaProducto.getProduc();
+        call.enqueue(new Callback<ArrayList<Producto>>() {
             @Override
-            public void onResponse(Call<List<Producto>> call, Response<List<Producto>> response) {
-                List<Producto> listaProductos = response.body();
-                for(int i = 0;i<=listaProductos.size();i++){
-                        listProducts.add(new ListProducts(listaProductos.get(i).getUrl(),listaProductos.get(i).getPrecio(),listaProductos.get(i).getNombre()));
-                }
-                Toast.makeText(OffertsActivity.this, "producto:"+listProducts.get(0), Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<ArrayList<Producto>> call, Response<ArrayList<Producto>> response) {
+
+                listaProductos = response.body();
+                adapter.notifyDataSetChanged();
+                Toast.makeText(OffertsActivity.this, ""+listaProductos.size(), Toast.LENGTH_SHORT).show();
+
+
+                //AlertDialog.Builder mensaje = new AlertDialog.Builder(OffertsActivity.this);
+               //mensaje.setMessage(listaProductos.get(0).getUrl());
+                //mensaje.setTitle("url");
+                //mensaje.show();
             }
 
+
             @Override
-            public void onFailure(Call<List<Producto>> call, Throwable t) {
+            public void onFailure(Call<ArrayList<Producto>> call, Throwable t) {
                 AlertDialog.Builder mensaje = new AlertDialog.Builder(OffertsActivity.this);
                 mensaje.setMessage(""+t);
                 mensaje.setTitle("ERROR");
@@ -76,12 +83,15 @@ public class OffertsActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
     private void instancia(){
-        listProducts = new ArrayList<>();
-        dataList = findViewById(R.id.products);
-        adapter = new ListProductsAdapter(this,listProducts);
+        listaProductos = new ArrayList<Producto>();
+        //dataList = findViewById(R.id.products);
+        //adapter = new ListProductsAdapter(this,listProducts);
     }
 
 
