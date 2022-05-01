@@ -55,13 +55,15 @@
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/btnCarrito"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="90dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/ic_cart"
-                app:tint="@color/green" />
+                app:tint="@color/green"
+                android:background="transparent"/>
 
         </LinearLayout>
 

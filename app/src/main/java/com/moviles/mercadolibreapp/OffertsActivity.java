@@ -9,15 +9,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.moviles.mercadolibreapp.Interface.ConsultaProducto;
+import com.moviles.mercadolibreapp.Model.Car;
 import com.moviles.mercadolibreapp.Model.Producto;
 import com.moviles.mercadolibreapp.Model.Register;
 import com.moviles.mercadolibreapp.databinding.ActivityOffertsBinding;
+import com.moviles.mercadolibreapp.databinding.ProductscardsBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,10 +32,22 @@ public class OffertsActivity extends AppCompatActivity {
 
     //ArrayList<ListProducts> listProducts;
     private ActivityOffertsBinding activityOffertsBinding;
+    private ProductscardsBinding productscardsBinding;
+    //carrito
     ArrayList<Producto> listaProductos;
     ProductoAdapter adapter;
     RecyclerView dataList;
+    ImageButton agregar;
+    ArrayList<Car> listaCar;
+    //fin carrito
 
+    //categoria
+    RecyclerView categoryList;
+    ArrayList<CategoryList> categoryModel;
+    CategoryListAdapter categoryListAdapter;
+    ImageButton backOffer;
+    LinearLayoutManager layoutManager;
+    //fin categoria
 
 
 
@@ -42,13 +57,9 @@ public class OffertsActivity extends AppCompatActivity {
         activityOffertsBinding = ActivityOffertsBinding.inflate(getLayoutInflater());
         View view = activityOffertsBinding.getRoot();
         setContentView(view);
-
+        agregar=productscardsBinding.btnCarrito;
         listaProductos = new ArrayList<>();
-
-
         //dataList = activityOffertsBinding.products;
-
-
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.1.7/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -59,22 +70,13 @@ public class OffertsActivity extends AppCompatActivity {
         call.enqueue(new Callback<ArrayList<Producto>>() {
             @Override
             public void onResponse(Call<ArrayList<Producto>> call, Response<ArrayList<Producto>> response) {
-
                 listaProductos = response.body();
                 adapter= new ProductoAdapter(listaProductos,OffertsActivity.this);
                 activityOffertsBinding.products.setHasFixedSize(true);
                 activityOffertsBinding.products.setLayoutManager(new LinearLayoutManager(OffertsActivity.this,LinearLayoutManager.HORIZONTAL,false));
                 activityOffertsBinding.products.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                //Toast.makeText(OffertsActivity.this, ""+listaProductos.size(), Toast.LENGTH_SHORT).show();
-
-
-                //AlertDialog.Builder mensaje = new AlertDialog.Builder(OffertsActivity.this);
-               //mensaje.setMessage(listaProductos.get(0).getUrl());
-                //mensaje.setTitle("url");
-                //mensaje.show();
             }
-
 
             @Override
             public void onFailure(Call<ArrayList<Producto>> call, Throwable t) {
@@ -84,19 +86,18 @@ public class OffertsActivity extends AppCompatActivity {
                 mensaje.show();
             }
         });
-
-
+        categoryList = activityOffertsBinding.categoryRecycle;
+        String[] textCategory = {"Celulares y Telefonos","Computacion","Belleza y Cuidado Personal","Electronica,Audio y Video","Deportes y Fitness","Carros,Motos y Otros"};
+        Integer[] imgCategory = {R.drawable.ic_cellphone,R.drawable.ic_desktop,R.drawable.ic_beauty,R.drawable.ic_microphone,R.drawable.ic_ball,R.drawable.ic_bx_car};
+        categoryModel = new ArrayList<>();
+        for(int i=0;i<textCategory.length;i++){
+            CategoryList model = new CategoryList(imgCategory[i],textCategory[i]);
+            categoryModel.add(model);
+        }
+        layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        categoryList.setLayoutManager(layoutManager);
+        CategoryListAdapter recycleAdapter = new CategoryListAdapter(this,categoryModel);
+        categoryList.setAdapter(recycleAdapter);
+        backOffer = findViewById(R.id.btnBackHome);
     }
-
-    private void instancia(){
-        listaProductos = new ArrayList<Producto>();
-        //dataList = findViewById(R.id.products);
-        //adapter = new ListProductsAdapter(this,listProducts);
-    }
-
-    public void getProducts(){
-
-    }
-
-
 }
