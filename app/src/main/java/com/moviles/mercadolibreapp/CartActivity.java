@@ -41,19 +41,47 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(view);
 
         activityCartBinding.btnBack.setOnClickListener(this);
-        recicler = findViewById(R.id.recycle_car);
+        readPreferences();
+
+        //recicler = findViewById(R.id.recycle_car);
+        //recicler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        //listDatos= new ArrayList<DatesCar>();
+        //for (int i = 0; i <= listDatos.size() ; i++) {
+
+        //}
+        //AdapterDatos adapterDatos = new AdapterDatos(listDatos,this);
+        //recicler.setAdapter(adapterDatos);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.1.7/MercadoLibreAPI/features/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        CartService cartService = retrofit.create(CartService.class);
+        Call <ArrayList<Car>> call = cartService.getToCart(identificacion);
+        call.enqueue(new Callback<ArrayList<Car>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Car>> call, Response<ArrayList<Car>> response) {
+
+                    ArrayList<Car> productosCarrito = response.body();
+
+                    AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
+                    mensaje.setMessage(productosCarrito.get(0).getId_producto());
+                    mensaje.setMessage(productosCarrito.get(0).getPrecio_producto());
+                    mensaje.setMessage(productosCarrito.get(0).getCantidad());
+                    mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
+                    mensaje.show();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Car>> call, Throwable t) {
+                AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
+                mensaje.setMessage("error mi pay "+t.getMessage());
+                mensaje.show();
+            }
+        });
 
 
-        recicler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        listDatos= new ArrayList<DatesCar>();
-        for (int i = 0; i <= listDatos.size() ; i++) {
-
-        }
-        AdapterDatos adapterDatos = new AdapterDatos(listDatos,this);
-        recicler.setAdapter(adapterDatos);
-
-        listDatos.add(new DatesCar("Portatil hp","$18.500","3","https://th.bing.com/th/id/OIP.OhjypicjGwjWNwhCbLECCwHaHa?pid=ImgDet&rs=1"));
-        listDatos.add(new DatesCar("Portatil hp","$18.500","3","https://th.bing.com/th/id/OIP.OhjypicjGwjWNwhCbLECCwHaHa?pid=ImgDet&rs=1"));
     }
 
     @Override
@@ -66,41 +94,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void getCart(){
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.20/MercadoLibreAPI/features/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        CartService cartService = retrofit.create(CartService.class);
-        Call <List<Car>> call = cartService.getToCart(identificacion);
-        call.enqueue(new Callback<List<Car>>() {
-            @Override
-            public void onResponse(Call<List<Car>> call, Response<List<Car>> response) {
-
-                if (response.isSuccessful()){
-
-                    List<Car> productosCarrito = response.body();
-
-                    AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
-                    mensaje.setMessage(productosCarrito.get(0).getId());
-                    mensaje.setMessage(productosCarrito.get(0).getPrecio());
-                    mensaje.setMessage(productosCarrito.get(0).getCantidad());
-                    mensaje.setTitle(productosCarrito.get(0).getNombre());
-                    mensaje.show();
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Car>> call, Throwable t) {
-
-            }
-        });
-
-    }
 
     public void readPreferences(){
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);

@@ -56,6 +56,9 @@ public class OffertsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         activityOffertsBinding = ActivityOffertsBinding.inflate(getLayoutInflater());
         View view = activityOffertsBinding.getRoot();
+        productscardsBinding = ProductscardsBinding.inflate(getLayoutInflater());
+        View view2= productscardsBinding.getRoot();
+
         setContentView(view);
         agregar=productscardsBinding.btnCarrito;
         listaProductos = new ArrayList<>();

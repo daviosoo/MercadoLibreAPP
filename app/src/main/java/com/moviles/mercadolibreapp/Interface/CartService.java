@@ -2,6 +2,7 @@ package com.moviles.mercadolibreapp.Interface;
 
 import com.moviles.mercadolibreapp.Model.Car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -16,6 +17,6 @@ public interface CartService {
     Call<Car> insertToCart(@Body Car producto);
 
     @GET("cart/cart.php")
-    Call<List<Car>> getToCart(@Query("identification") int identificacion);
+    Call<ArrayList<Car>> getToCart(@Query("identification") int identificacion);
 
 }
