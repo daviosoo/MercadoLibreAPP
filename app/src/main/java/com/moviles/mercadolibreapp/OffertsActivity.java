@@ -44,10 +44,8 @@ public class OffertsActivity extends AppCompatActivity {
         setContentView(view);
 
         listaProductos = new ArrayList<>();
-        adapter= new ProductoAdapter(listaProductos,this);
-        activityOffertsBinding.products.setHasFixedSize(true);
-        activityOffertsBinding.products.setLayoutManager(new LinearLayoutManager(this));
-        activityOffertsBinding.products.setAdapter(adapter);
+
+
         //dataList = activityOffertsBinding.products;
 
 
@@ -63,8 +61,12 @@ public class OffertsActivity extends AppCompatActivity {
             public void onResponse(Call<ArrayList<Producto>> call, Response<ArrayList<Producto>> response) {
 
                 listaProductos = response.body();
+                adapter= new ProductoAdapter(listaProductos,OffertsActivity.this);
+                activityOffertsBinding.products.setHasFixedSize(true);
+                activityOffertsBinding.products.setLayoutManager(new LinearLayoutManager(OffertsActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                activityOffertsBinding.products.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
-                Toast.makeText(OffertsActivity.this, ""+listaProductos.size(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(OffertsActivity.this, ""+listaProductos.size(), Toast.LENGTH_SHORT).show();
 
 
                 //AlertDialog.Builder mensaje = new AlertDialog.Builder(OffertsActivity.this);
@@ -84,14 +86,16 @@ public class OffertsActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private void instancia(){
         listaProductos = new ArrayList<Producto>();
         //dataList = findViewById(R.id.products);
         //adapter = new ListProductsAdapter(this,listProducts);
+    }
+
+    public void getProducts(){
+
     }
 
 

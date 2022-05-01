@@ -2,10 +2,9 @@ package com.moviles.mercadolibreapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
+
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +14,7 @@ import com.moviles.mercadolibreapp.Model.Producto;
 import com.moviles.mercadolibreapp.databinding.ProductscardsBinding;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ProductoViewHolder> {
     private Context context;
