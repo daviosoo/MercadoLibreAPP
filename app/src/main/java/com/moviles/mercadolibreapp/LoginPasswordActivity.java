@@ -3,16 +3,20 @@ package com.moviles.mercadolibreapp;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.Toast;
 
 import com.moviles.mercadolibreapp.Interface.RegisterParse;
 import com.moviles.mercadolibreapp.Model.Register;
 import com.moviles.mercadolibreapp.databinding.ActivityLoginPasswordBinding;
 
 import java.util.List;
+import java.util.function.ToIntFunction;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,6 +29,7 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     private ActivityLoginPasswordBinding activityLoginPasswordBinding;
     public String Email;
     public String contra;
+    private int identificacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +69,19 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
         Bundle extras = getIntent().getExtras();
         Email= extras.getString("email");
     }
+    public void  savePreferences(){
+        Toast.makeText(this, Email, Toast.LENGTH_SHORT).show();
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference) ,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString( getString(R.string.Email) , Email);
+        editor.putInt( getString(R.string.Identificacion), identificacion);
+        editor.putString( getString(R.string.Status), "Logged");
+        editor.apply();
+    }
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.7/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.5/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -87,16 +101,12 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
                     mensaje.setTitle("ingresando");
                     mensaje.show();
 
+                for(Register register: listUSer){
+                    identificacion = Integer.parseInt(register.getIdentificacion());
+                }
 
-                /*for(Register register: listUSer){
-                    String content = "";
-                    content+="identificacion:" + register.getIdentificacion()+"\n";
-                    content+="email:" + register.getEmail()+"\n";
-                    content+="celular:" + register.getCelular()+"\n";
-                    content+="contra:" + register.getContra()+"\n";
-                    activityLoginPasswordBinding.txtPrueba.append(content);
-                }*/
                 Intent intent = new Intent(LoginPasswordActivity.this, HomeActivity.class);
+                savePreferences();
                 startActivity(intent);
             }
 

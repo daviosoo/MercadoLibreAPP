@@ -8,9 +8,11 @@ import android.view.View;
 
 import com.moviles.mercadolibreapp.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityMainBinding activityMainBindingBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         activityMainBindingBinding.btnContinueRegister.setOnClickListener(this);
         activityMainBindingBinding.btnContinueLogin.setOnClickListener(this);
     }
+
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnSkip:
                 Intent intentSkip = new Intent(this, com.moviles.mercadolibreapp.HomeActivity.class);
                 startActivity(intentSkip);
@@ -36,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnContinueLogin:
                 Intent intentLogin = new Intent(this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
                 startActivity(intentLogin);
-                break;
         }
     }
 }

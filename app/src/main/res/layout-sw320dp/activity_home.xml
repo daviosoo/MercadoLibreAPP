@@ -22,591 +22,367 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/yellow_light"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
-            app:title=""
-            tools:ignore="MissingConstraints" />
+            android:layout_height="match_parent">
 
-        <ImageButton
-            android:id="@+id/btnShopping"
-            android:layout_width="40dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/transparent"
-            android:contentDescription="TODO"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/searchView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_cart"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="260dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/border_search"
-            android:backgroundTint="@color/white"
-            android:iconifiedByDefault="false"
-            android:queryHint="@string/search"
-            android:searchHintIcon="@drawable/ic_search"
-            android:searchIcon="@drawable/ic_search"
-            app:layout_constraintBottom_toTopOf="@+id/toolbar"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:layout_constraintVertical_bias="0.487" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="43dp" />
-
-        <TextView
-            android:id="@+id/ubication"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="8dp"
-            android:drawableStart="@drawable/ic_location_plus"
-            android:fontFamily="@font/pronova"
-            android:text="@string/ubication"
-            android:textColor="@color/black"
-            android:textSize="14dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guideline8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="92dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="229dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="306dp" />
-
-        <ImageButton
-            android:id="@+id/btnQr"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:background="@drawable/border_list"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/btnOffer"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/ic_bx_qr"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/offer"
-            android:textColor="@color/blue_light"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView14"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/btnOffer" />
-
-        <ImageButton
-            android:id="@+id/btnBag"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:background="@drawable/border_list"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/btnCar"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnOffer"
-            app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/ic_shopping"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
-            android:text="@string/plus"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView15"
-            app:layout_constraintTop_toBottomOf="@+id/btnPlus" />
-
-        <ImageButton
-            android:id="@+id/btnCar"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:background="@drawable/border_list"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/btnPlus"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnBag"
-            app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/ic_car"
-            app:tint="@android:color/darker_gray"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/btnPlus"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:background="@drawable/border_list"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btnCar"
-            app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/ic_plus"
-            app:tint="@android:color/darker_gray"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/supermarket"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView15"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/btnBag" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/qr"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView13"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnQr" />
-
-        <ImageButton
-            android:id="@+id/btnOffer"
-            android:layout_width="51dp"
-            android:layout_height="48dp"
-            android:background="@drawable/border_list"
-            android:backgroundTint="@color/white"
-            android:elevation="5dp"
-            android:onClick="onClick"
-            app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/btnBag"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnQr"
-            app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintVertical_bias="0.457"
-            app:srcCompat="@drawable/ic_bx_purchase_tag"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="77dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/car"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView16"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView14"
-            app:layout_constraintTop_toBottomOf="@+id/btnCar" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="389dp" />
-
-        <ImageButton
-            android:id="@+id/btnOfferts"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.482"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline14"
-            app:srcCompat="@drawable/oferta"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="518dp" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardReciente"
-            android:layout_width="330dp"
-            android:layout_height="180dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnOfferts"
-            app:layout_constraintVertical_bias="0.028">
-
-            <LinearLayout
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:background="@color/yellow_light"
+                android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
+                app:title=""
+                tools:ignore="MissingConstraints" />
+
+            <ImageButton
+                android:id="@+id/btnShopping"
+                android:layout_width="40dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="TODO"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/searchView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_cart"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="260dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/border_search"
+                android:backgroundTint="@color/white"
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/search"
+                android:searchHintIcon="@drawable/ic_search"
+                android:searchIcon="@drawable/ic_search"
+                app:layout_constraintBottom_toTopOf="@+id/toolbar"
+                app:layout_constraintStart_toStartOf="@+id/guideline9"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                app:layout_constraintVertical_bias="0.487" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="43dp" />
+
+            <TextView
+                android:id="@+id/ubication"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="8dp"
+                android:drawableStart="@drawable/ic_location_plus"
+                android:fontFamily="@font/pronova"
+                android:text="@string/ubication"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/guideline8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="92dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="229dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="306dp" />
+
+            <ImageButton
+                android:id="@+id/btnQr"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_list"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toStartOf="@+id/btnOffer"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline13"
+                app:layout_constraintVertical_bias="0.457"
+                app:srcCompat="@drawable/ic_bx_qr"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/offer"
+                android:textColor="@color/blue_light"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView14"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/btnOffer" />
+
+            <ImageButton
+                android:id="@+id/btnBag"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_list"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toStartOf="@+id/btnCar"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnOffer"
+                app:layout_constraintTop_toTopOf="@+id/guideline13"
+                app:layout_constraintVertical_bias="0.457"
+                app:srcCompat="@drawable/ic_shopping"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:text="@string/plus"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintTop_toBottomOf="@+id/btnPlus" />
+
+            <ImageButton
+                android:id="@+id/btnCar"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_list"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toStartOf="@+id/btnPlus"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnBag"
+                app:layout_constraintTop_toTopOf="@+id/guideline13"
+                app:layout_constraintVertical_bias="0.457"
+                app:srcCompat="@drawable/ic_car"
+                app:tint="@android:color/darker_gray"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageButton
+                android:id="@+id/btnPlus"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_list"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnCar"
+                app:layout_constraintTop_toTopOf="@+id/guideline13"
+                app:layout_constraintVertical_bias="0.457"
+                app:srcCompat="@drawable/ic_plus"
+                app:tint="@android:color/darker_gray"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/supermarket"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView15"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView13"
+                app:layout_constraintTop_toBottomOf="@+id/btnBag" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/qr"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView13"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnQr" />
+
+            <ImageButton
+                android:id="@+id/btnOffer"
+                android:layout_width="51dp"
+                android:layout_height="48dp"
+                android:background="@drawable/border_list"
+                android:backgroundTint="@color/white"
+                android:elevation="5dp"
+                android:onClick="onClick"
+                app:layout_constraintBottom_toTopOf="@+id/guideline14"
+                app:layout_constraintEnd_toStartOf="@+id/btnBag"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/btnQr"
+                app:layout_constraintTop_toTopOf="@+id/guideline13"
+                app:layout_constraintVertical_bias="0.457"
+                app:srcCompat="@drawable/ic_bx_purchase_tag"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="77dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/car"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView16"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/btnCar" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="389dp" />
+
+            <ImageButton
+                android:id="@+id/btnOfferts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline15"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline14"
+                app:srcCompat="@drawable/oferta"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="518dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardReciente"
+                android:layout_width="330dp"
+                android:layout_height="180dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnOfferts"
+                app:layout_constraintVertical_bias="0.028">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="12dp"
-                        android:fontFamily="@font/pronova"
-                        android:text="@string/cardText1"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/gray_light" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="90dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="10dp"
-                        android:src="@drawable/hp" />
-
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/hpinfo"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/hpinfo2"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/hpvalue"
-                            android:textColor="@color/black"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/hpfree"
-                            android:textColor="@color/green"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/gray_light" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="6dp"
-                        android:fontFamily="@font/pronova"
-                        android:text="@string/watchHistory"
-                        android:textColor="@color/blue_light"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycle_view"
-            android:layout_width="0dp"
-            android:layout_height="139dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline8" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btnsusDisney"
-            android:layout_width="330dp"
-            android:layout_height="27dp"
-            android:background="@drawable/disneyback"
-            android:backgroundTint="#641274"
-            app:layout_constraintBottom_toTopOf="@+id/cdEnvio"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline12">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/pronova"
-                    android:text="@string/susdisney"
-                    android:textColor="@color/white"
-                    android:textSize="13dp" />
-
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="5dp"
-                    android:src="@drawable/ic_disney" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_star" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdEnvio"
-            android:layout_width="330dp"
-            android:layout_height="27dp"
-            android:backgroundTint="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginTop="5dp"
-                    android:src="@drawable/ic_truck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/pronova"
-                    android:text="@string/enviocar"
-                    android:textColor="@color/green"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="7dp"
-                    android:layout_marginTop="7dp"
-                    android:fontFamily="@font/pronova"
-                    android:text="@string/enviocar2"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdOferta"
-            android:layout_width="330dp"
-            android:layout_height="390dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardReciente">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:fontFamily="@font/pronova"
-                        android:text="Oferta del dia"
-                        android:textColor="@color/black"
-
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/gray_light" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="170dp"
-                        android:layout_margin="20dp"
-                        android:src="@drawable/canasta" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:fontFamily="@font/pronova"
-                        android:text="Canasto Cesta 100% Junco Begonia"
-                        android:textColor="@color/black"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
+                            android:layout_margin="12dp"
                             android:fontFamily="@font/pronova"
-                            android:text="$48.100"
+                            android:text="@string/cardText1"
                             android:textColor="@color/black"
+                            android:textSize="17dp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="8dp"
-                            android:text="46% OFF"
-                            android:textColor="@color/green"
-                            android:textSize="9dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/gray_light" />
+
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:layout_width="90dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/hp" />
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/ic_thunder" />
+                            android:layout_marginLeft="16dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="FULL"
-                            android:textColor="@color/green"
-                            android:textSize="10dp"
-                            android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/hpinfo"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/hpinfo2"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/hpvalue"
+                                android:textColor="@color/black"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/hpfree"
+                                android:textColor="@color/green"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
@@ -623,43 +399,126 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_margin="15dp"
+                            android:layout_margin="6dp"
                             android:fontFamily="@font/pronova"
-                            android:text="Ver todas las ofertas   >"
+                            android:text="@string/watchHistory"
                             android:textColor="@color/blue_light"
                             android:textSize="12dp"
                             android:textStyle="bold" />
-
-
                     </LinearLayout>
-
-
                 </LinearLayout>
-            </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdSuscribete"
-            android:layout_width="330dp"
-            android:layout_height="425dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cdOferta">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view"
+                android:layout_width="0dp"
+                android:layout_height="139dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnsusDisney"
+                android:layout_width="330dp"
+                android:layout_height="27dp"
+                android:background="@drawable/disneyback"
+                android:backgroundTint="#641274"
+                app:layout_constraintBottom_toTopOf="@+id/cdEnvio"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline12">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/disneyback"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/pronova"
+                        android:text="@string/susdisney"
+                        android:textColor="@color/white"
+                        android:textSize="13dp" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:src="@drawable/ic_disney" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_star" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdEnvio"
+                android:layout_width="330dp"
+                android:layout_height="27dp"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/guideline13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/ic_truck" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/pronova"
+                        android:text="@string/enviocar"
+                        android:textColor="@color/green"
+                        android:textSize="13dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/pronova"
+                        android:text="@string/enviocar2"
+                        android:textColor="@color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdOferta"
+                android:layout_width="330dp"
+                android:layout_height="390dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardReciente">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -667,215 +526,592 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="125dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="0dp"
+                            android:layout_margin="15dp"
                             android:fontFamily="@font/pronova"
-                            android:text="Suscribete al"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
+                            android:text="Oferta del dia"
+                            android:textColor="@color/black"
+
+                            android:textSize="14dp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="74dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:fontFamily="@font/pronova"
-                            android:paddingBottom="10dp"
-                            android:text="nivel 6"
-                            android:textColor="@color/white"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
-
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/gray_light" />
                     </LinearLayout>
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/pronova"
-                        android:paddingStart="67dp"
-                        android:paddingBottom="10dp"
-                        android:text="$ 46.645"
-                        android:textColor="@color/white"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:layout_margin="20dp"
+                            android:src="@drawable/canasta" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:fontFamily="@font/pronova"
+                            android:text="Canasto Cesta 100% Junco Begonia"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="$48.100"
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="8dp"
+                                android:text="46% OFF"
+                                android:textColor="@color/green"
+                                android:textSize="9dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_thunder" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="FULL"
+                                android:textColor="@color/green"
+                                android:textSize="10dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@color/gray_light" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="15dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="Ver todas las ofertas   >"
+                                android:textColor="@color/blue_light"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
                 </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdSuscribete"
+                android:layout_width="330dp"
+                android:layout_height="425dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cdOferta">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/disneyback"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="125dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="0dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="Suscribete al"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="74dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:fontFamily="@font/pronova"
+                                android:paddingBottom="10dp"
+                                android:text="nivel 6"
+                                android:textColor="@color/white"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/pronova"
+                            android:paddingStart="67dp"
+                            android:paddingBottom="10dp"
+                            android:text="$ 46.645"
+                            android:textColor="@color/white"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:text="Consigue los mejores beneficios en"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
-                        <TextView
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:text="Consigue los mejores beneficios en"
+                                android:textColor="@color/black"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:text="Mercado Libre y Mercado Pago"
+                                android:textColor="@color/black"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="30dp"
+                                android:src="@drawable/ic_d_" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="40dp"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="Disney+ sin carga"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/ic_star_" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="30dp"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="Star+ sin cargo"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/truck2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="20dp"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/envios"
+                                android:textAlignment="viewStart"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="35dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/qr2" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="30dp"
+                                android:drawablePadding="10dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/desc"
+                                android:textAlignment="center"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="16dp"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                        </LinearLayout>
+
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:text="Mercado Libre y Mercado Pago"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:textStyle="bold" />
+                            android:layout_height="1dp"
+                            android:background="@color/gray_light"
+                            android:layout_marginTop="7dp"/>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="290dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="@font/pronova"
+                                android:text="@string/sus"
+                                android:textColor="@color/blue_light"
+                                android:textSize="17dp"
+                                android:textStyle="bold"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="  >"
+                                android:textColor="@color/blue_light"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
 
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cdMercadoPago"
+                android:layout_width="330dp"
+                android:layout_height="345dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cdSuscribete"
+                app:cardCornerRadius="8dp">
+
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="30dp"
-                            android:src="@drawable/ic_d_" />
-
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="40dp"
-                            android:drawablePadding="10dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="Disney+ sin carga"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
+                            android:text="@string/categorias"
+                            android:textStyle="bold"
+                            android:textSize="19dp"
                             android:textColor="@color/black"
-                            android:textSize="16dp"
-                            tools:ignore="TouchTargetSizeCheck" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/ic_star_" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="30dp"
-                            android:drawablePadding="10dp"
                             android:fontFamily="@font/pronova"
-                            android:text="Star+ sin cargo"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            tools:ignore="TouchTargetSizeCheck" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/truck2" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="20dp"
-                            android:drawablePadding="10dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/envios"
-                            android:textAlignment="viewStart"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            tools:ignore="TouchTargetSizeCheck" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="35dp"
-                            android:layout_height="40dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="20dp"
-                            android:src="@drawable/qr2" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="30dp"
-                            android:drawablePadding="10dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/desc"
-                            android:textAlignment="center"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black"
-                            android:textSize="16dp"
-                            tools:ignore="TouchTargetSizeCheck" />
-
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="10dp"/>
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/gray_light"
-                        android:layout_marginTop="7dp"/>
+                        android:layout_marginTop="8dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_cellphone"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/celulares"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_desktop"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/computacion"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_beauty"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/belleza"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_microphone"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/celulares"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_ball"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/celulares"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_bx_car" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/celulares"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/pronova"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginStart="10dp"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_light"
+                        android:layout_marginTop="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="290dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="@font/pronova"
-                            android:text="@string/sus"
+                            android:text="@string/vercategorias"
                             android:textColor="@color/blue_light"
-                            android:textSize="17dp"
-                            android:textStyle="bold"/>
+                            android:fontFamily="@font/pronova"
+                            android:textStyle="bold"
+                            android:layout_marginStart="7dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -885,249 +1121,13 @@
                             android:textColor="@color/blue_light"
                             android:textSize="17dp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cdMercadoPago"
-            android:layout_width="330dp"
-            android:layout_height="345dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cdSuscribete"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/categorias"
-                        android:textStyle="bold"
-                        android:textSize="19dp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_cellphone"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/celulares"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_desktop"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/computacion"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_beauty"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/belleza"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_microphone"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/celulares"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/ic_ball"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/celulares"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="8dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/ic_bx_car" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/celulares"
-                        android:textColor="@color/black"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/pronova"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginStart="10dp"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_light"
-                    android:layout_marginTop="15dp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="290dp"
-                        android:layout_height="wrap_content"
-                        android:text="@string/vercategorias"
-                        android:textColor="@color/blue_light"
-                        android:fontFamily="@font/pronova"
-                        android:textStyle="bold"
-                        android:layout_marginStart="7dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="  >"
-                        android:textColor="@color/blue_light"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.drawerlayout.widget.DrawerLayout>

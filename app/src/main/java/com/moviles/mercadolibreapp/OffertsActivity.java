@@ -50,14 +50,13 @@ public class OffertsActivity extends AppCompatActivity {
     //fin categoria
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activityOffertsBinding = ActivityOffertsBinding.inflate(getLayoutInflater());
         View view = activityOffertsBinding.getRoot();
         productscardsBinding = ProductscardsBinding.inflate(getLayoutInflater());
-        View view2= productscardsBinding.getRoot();
+        View view2 = productscardsBinding.getRoot();
 
         setContentView(view);
         agregar=productscardsBinding.btnCarrito;

@@ -8,17 +8,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
@@ -37,17 +38,29 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     BottomSheetDialog dialog;
     ImageButton buttonOpenDialog;
     ImageButton cart;
+    String status;
+    String email;
 
-
-
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
+        readPreferences();
+
         navigationView = findViewById(R.id.nav_view);
+
+        if (!status.isEmpty()){
+
+            TextView user = findViewById(R.id.ubication);
+            user.setText(email);
+
+        }
+
+        drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.toolbar);
+        cart = findViewById(R.id.btnShopping);
 
         setSupportActionBar(toolbar);
         navigationView.bringToFront();
@@ -70,7 +83,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
         layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        cart = findViewById(R.id.btnShopping);
+
         RecycleAdapter recycleAdapter = new RecycleAdapter(this,recycleModels);
         recyclerView.setAdapter(recycleAdapter);
 
@@ -85,6 +98,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
         ImageButton btnOffer = findViewById(R.id.btnOffer);
+
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!status.isEmpty()){
+                    Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                    startActivity(intentCart);
+                }
+                else
+                {
+                    Intent intentLogin = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
+                    startActivity(intentLogin);
+                }
+            }
+        });
+
     }
 
     public void onClick(View view) {
@@ -95,25 +126,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                /*if (!status.isEmpty()){
-                    Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
-                    startActivity(intentCart);
-                }
-                else
-                {
-                    Intent intentLogin = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
-                    startActivity(intentLogin);
-                }*/
-                Intent intentCart = new Intent(HomeActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
-                startActivity(intentCart);
-
-
-            }
-        });
     }
 
     @Override
@@ -127,8 +139,35 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    public void readPreferences(){
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference),Context.MODE_PRIVATE);
+        status = sharedPref.getString("Status", "");
+        email = sharedPref.getString("Email", "");
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+
+            case R.id.nav_home:
+                break;
+            case R.id.nav_session:
+
+                SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference),Context.MODE_PRIVATE);
+                sharedPref.edit().clear().apply();
+
+                Intent  intent = new Intent(this, HomeActivity.class);
+                this.finish();
+                startActivity(intent);
+
+                Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_LONG).show();
+                break;
+        }
+
         return true;
+
     }
 }

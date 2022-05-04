@@ -9,11 +9,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_color_light">#F2F2F2</color>
     <color name="bg_color_dark">#E4E4E5</color>
-    <color name="yellow_light">#ffdb15</color>
+    <color name="gray">#8c8c8c</color>
+    <color name="green">#199f5b</color>
+    <color name="yellow_light">#ffda13</color>
     <color name="yellow_dark">#F2B705</color>
     <color name="blue_light">#3587F2</color>
     <color name="blue_dark">#2D3773</color>
-    <color name="gray">#8c8c8c</color>
     <color name="gray_light">#e7e7e7</color>
-    <color name="green">#199f5b</color>
+    <color name="gray_Text">#757575</color>
+
 </resources>
