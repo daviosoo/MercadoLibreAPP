@@ -61,7 +61,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     public void readPreferences() {
         SharedPreferences sharedPref = getSharedPreferences("MercadoLibre",Context.MODE_PRIVATE);
         identificacion = sharedPref.getInt(getString(R.string.Identificacion), 0);
-        identificacion =sharedPref.getInt("identificacion",0);
+        identificacion =sharedPref.getInt("Identificacion",0);
     }
 
     public void getCart(){
@@ -84,7 +84,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     listaProductos = response.body();
 
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
-                    String message;
+                    String message = "";
                     TextView valorCarrito = findViewById(R.id.txtTotalCarrito);
                     TextView cantidaCarrito = findViewById(R.id.txtCantidadCarrito);
 
@@ -92,16 +92,15 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     if (listaProductos.size() > 0)
                     {
                         cantidaCarrito.setText("Carrito ("+ listaProductos.size() +")");
-                        message = Integer.toString(listaProductos.get(0).getId_producto()) + "\n" + Integer.toString(listaProductos.get(0).getPrecio_producto()) + "\n" + Integer.toString(listaProductos.get(0).getCantidad());
-                        mensaje.setTitle(listaProductos.get(0).getNombre_producto());
+                        //message = Integer.toString(listaProductos.get(0).getId_producto()) + "\n" + Integer.toString(listaProductos.get(0).getPrecio_producto()) + "\n" + Integer.toString(listaProductos.get(0).getCantidad());
+                        //mensaje.setTitle(listaProductos.get(0).getNombre_producto());
 
                         int valorTotalCarrito = 0;
 
                         for (Car producto:
                                 listaProductos) {
 
-                            int totalProducto = producto.getCantidad() * producto.getPrecio_producto();
-                            valorTotalCarrito += totalProducto;
+                            valorTotalCarrito += producto.getPrecio_producto();
 
                             //recicler = findViewById(R.id.recycle_car);
                             //recicler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
@@ -127,10 +126,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     {
                         message = "No hay productos en el carrito";
                         mensaje.setTitle("Aviso");
-                    }
 
-                    mensaje.setMessage(message);
-                    mensaje.show();
+                        mensaje.setMessage(message);
+                        mensaje.show();
+                    }
 
                 }
 
