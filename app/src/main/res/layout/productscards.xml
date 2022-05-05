@@ -36,21 +36,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pronova"
-                android:textColor="@color/green"
-                android:textSize="13dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/desProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="2dp"
                 android:fontFamily="@font/pronova"
                 android:textColor="@color/black"
                 android:textSize="15dp" />
@@ -63,7 +53,8 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_cart"
-                app:tint="@color/green" />
+                app:tint="@color/green"
+                tools:ignore="SpeakableTextPresentCheck" />
 
         </LinearLayout>
 

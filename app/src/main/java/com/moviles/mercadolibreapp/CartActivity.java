@@ -43,7 +43,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         readPreferences();
         activityCartBinding.btnBack.setOnClickListener(this);
 
-        Toast.makeText(this, Integer.toString(identificacion), Toast.LENGTH_SHORT).show();
         getCart();
     }
 
@@ -58,15 +57,16 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void readPreferences() {
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("MercadoLibre",Context.MODE_PRIVATE);
         status = sharedPref.getString("Status", "");
-        identificacion = sharedPref.getInt("Identificación", 0);
+        identificacion = sharedPref.getInt(getString(R.string.Identificacion), 0);
+        Toast.makeText(this, Integer.toString(identificacion), Toast.LENGTH_SHORT).show();
     }
 
     public void getCart(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.5/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

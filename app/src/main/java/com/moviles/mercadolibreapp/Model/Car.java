@@ -1,12 +1,14 @@
 package com.moviles.mercadolibreapp.Model;
 
+import android.content.Intent;
+
 public class Car {
     private int id_producto;
     private String nombre_producto;
     private int precio_producto;
     private String url_producto;
     private int identificacion_usuario;
-    private int cantidad;
+    private int cantidad_producto;
 
     public Car(int id_producto, String nombre_producto, int precio_producto, String url_producto, int identificacion_usuario, int cantidad) {
         this.id_producto = id_producto;
@@ -14,7 +16,7 @@ public class Car {
         this.precio_producto = precio_producto;
         this.url_producto = url_producto;
         this.identificacion_usuario = identificacion_usuario;
-        this.cantidad = cantidad;
+        this.cantidad_producto = cantidad;
     }
 
     public int getId_producto() {
@@ -58,10 +60,10 @@ public class Car {
     }
 
     public int getCantidad() {
-        return cantidad;
+        return cantidad_producto;
     }
 
     public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+        this.cantidad_producto = cantidad;
     }
 }

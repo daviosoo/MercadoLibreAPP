@@ -59,7 +59,8 @@
         <entry key="app/src/main/res/layout/activity_cart.xml" value="0.16302083333333334" />
         <entry key="app/src/main/res/layout/activity_offerts.xml" value="0.2962226640159046" />
         <entry key="app/src/main/res/layout/header.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/productscards.xml" value="0.16302083333333334" />
+        <entry key="app/src/main/res/layout/productcard.xml" value="0.18704710144927536" />
+        <entry key="app/src/main/res/layout/productscards.xml" value="0.375" />
       </map>
     </option>
   </component>

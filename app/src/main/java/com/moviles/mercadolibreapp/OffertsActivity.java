@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridLayout;
@@ -28,7 +31,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class OffertsActivity extends AppCompatActivity {
+public class OffertsActivity extends AppCompatActivity{
 
     //ArrayList<ListProducts> listProducts;
     private ActivityOffertsBinding activityOffertsBinding;
@@ -37,7 +40,6 @@ public class OffertsActivity extends AppCompatActivity {
     ArrayList<Producto> listaProductos;
     ProductoAdapter adapter;
     RecyclerView dataList;
-    ImageButton agregar;
     ArrayList<Car> listaCar;
     //fin carrito
 
@@ -59,11 +61,10 @@ public class OffertsActivity extends AppCompatActivity {
         View view2 = productscardsBinding.getRoot();
 
         setContentView(view);
-        agregar=productscardsBinding.btnCarrito;
         listaProductos = new ArrayList<>();
         //dataList = activityOffertsBinding.products;
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.7/MercadoLibreAPI/features/")
+                .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -101,5 +102,15 @@ public class OffertsActivity extends AppCompatActivity {
         CategoryListAdapter recycleAdapter = new CategoryListAdapter(this,categoryModel);
         categoryList.setAdapter(recycleAdapter);
         backOffer = findViewById(R.id.btnBackHome);
+
+        backOffer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OffertsActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }
