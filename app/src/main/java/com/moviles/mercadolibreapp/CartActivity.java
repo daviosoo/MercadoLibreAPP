@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.moviles.mercadolibreapp.Interface.CartService;
 import com.moviles.mercadolibreapp.Model.Car;
+import com.moviles.mercadolibreapp.Model.Producto;
 import com.moviles.mercadolibreapp.databinding.ActivityCartBinding;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     private ActivityCartBinding activityCartBinding;
     String status;
     int identificacion;
-    ArrayList<DatesCar> listDatos;
-    RecyclerView recicler;
+    ArrayList<Car> listaProductos;
+    CarAdapter adapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,33 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         activityCartBinding.btnBack.setOnClickListener(this);
 
         Toast.makeText(this, Integer.toString(identificacion), Toast.LENGTH_SHORT).show();
-        getCart();
+        listaProductos = new ArrayList<>();
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.24.85/MercadoLibreAPI/features/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        CartService cartService = retrofit.create(CartService.class);
+        Call<ArrayList<Car>> call = cartService.getToCart(identificacion);
+        call.enqueue(new Callback<ArrayList<Car>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Car>> call, Response<ArrayList<Car>> response) {
+                listaProductos = response.body();
+                adapter = new CarAdapter(CartActivity.this,listaProductos);
+                activityCartBinding.recycleCar.setHasFixedSize(true);
+                activityCartBinding.recycleCar.setLayoutManager(new LinearLayoutManager(CartActivity.this,LinearLayoutManager.VERTICAL,false));
+                activityCartBinding.recycleCar.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Car>> call, Throwable t) {
+                AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
+                mensaje.setMessage(""+t);
+                mensaje.setTitle("ERROR");
+                mensaje.show();
+            }
+        });
     }
 
     @Override
@@ -58,86 +86,10 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void readPreferences() {
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        status = sharedPref.getString("Status", "");
-        identificacion = sharedPref.getInt("Identificación", 0);
+        SharedPreferences sharedPref = getSharedPreferences("MercadoLibre" ,Context.MODE_PRIVATE);
+        identificacion =sharedPref.getInt("identificacion",0);
     }
 
-    public void getCart(){
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.5/MercadoLibreAPI/features/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        CartService cartService = retrofit.create(CartService.class);
-        Call <ArrayList<Car>> call = cartService.getToCart(identificacion);
-
-        call.enqueue(new Callback<ArrayList<Car>>() {
-            @Override
-            public void onResponse(Call<ArrayList<Car>> call, Response<ArrayList<Car>> response) {
-
-                if (response.isSuccessful()){
-
-                    List<Car> productosCarrito = response.body();
-
-                    AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
-                    String message;
-                    TextView valorCarrito = findViewById(R.id.txtTotalCarrito);
-                    TextView cantidaCarrito = findViewById(R.id.txtCantidadCarrito);
-
-
-                    if (productosCarrito.size() > 0)
-                    {
-                        cantidaCarrito.setText("Carrito ("+ productosCarrito.size() +")");
-                        message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad());
-                        mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
-
-                        int valorTotalCarrito = 0;
-
-                        for (Car producto:
-                                productosCarrito) {
-
-                            int totalProducto = producto.getCantidad() * producto.getPrecio_producto();
-                            valorTotalCarrito += totalProducto;
-
-                            //recicler = findViewById(R.id.recycle_car);
-                            //recicler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-                            //listDatos= new ArrayList<DatesCar>();
-                            //for (int i = 0; i <= listDatos.size() ; i++) {
-
-                            //}
-                            //AdapterDatos adapterDatos = new AdapterDatos(listDatos,this);
-                            //recicler.setAdapter(adapterDatos);
-
-                        }
-
-                        valorCarrito.setText("$" + valorTotalCarrito);
-
-                    }
-                    else
-                    {
-                        message = "No hay productos en el carrito";
-                        mensaje.setTitle("Aviso");
-                    }
-
-                    mensaje.setMessage(message);
-                    mensaje.show();
-
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<ArrayList<Car>> call, Throwable t) {
-
-                AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
-                mensaje.setMessage("error mi pay "+t.getMessage());
-                mensaje.show();
-
-            }
-        });
-
-    }
 
 }
