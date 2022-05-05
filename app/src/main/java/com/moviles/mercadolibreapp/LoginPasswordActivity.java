@@ -71,12 +71,12 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
     }
     public void  savePreferences(){
         Toast.makeText(this, Email, Toast.LENGTH_SHORT).show();
-        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference) ,Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("MercadoLibre" ,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString( getString(R.string.Email) , Email);
-        editor.putInt( getString(R.string.Identificacion), identificacion);
-        editor.putString( getString(R.string.Status), "Logged");
-        editor.apply();
+        editor.putString("Email" , Email);
+        editor.putInt( "identificacion", identificacion);
+        editor.putString("Status", "Logged");
+        editor.commit();
     }
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();

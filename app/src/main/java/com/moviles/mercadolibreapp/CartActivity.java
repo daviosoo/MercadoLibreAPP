@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.moviles.mercadolibreapp.Interface.CartService;
 import com.moviles.mercadolibreapp.Model.Car;
+import com.moviles.mercadolibreapp.Model.Producto;
 import com.moviles.mercadolibreapp.databinding.ActivityCartBinding;
 
 import java.util.ArrayList;
@@ -30,8 +31,9 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     private ActivityCartBinding activityCartBinding;
     String status;
     int identificacion;
-    ArrayList<DatesCar> listDatos;
-    RecyclerView recicler;
+    ArrayList<Car> listaProductos;
+    CarAdapter adapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,12 +60,12 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
     public void readPreferences() {
         SharedPreferences sharedPref = getSharedPreferences("MercadoLibre",Context.MODE_PRIVATE);
-        status = sharedPref.getString("Status", "");
         identificacion = sharedPref.getInt(getString(R.string.Identificacion), 0);
-        Toast.makeText(this, Integer.toString(identificacion), Toast.LENGTH_SHORT).show();
+        identificacion =sharedPref.getInt("identificacion",0);
     }
 
     public void getCart(){
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
@@ -79,7 +81,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (response.isSuccessful()){
 
-                    List<Car> productosCarrito = response.body();
+                    listaProductos = response.body();
 
                     AlertDialog.Builder mensaje = new AlertDialog.Builder(CartActivity.this);
                     String message;
@@ -87,16 +89,16 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                     TextView cantidaCarrito = findViewById(R.id.txtCantidadCarrito);
 
 
-                    if (productosCarrito.size() > 0)
+                    if (listaProductos.size() > 0)
                     {
-                        cantidaCarrito.setText("Carrito ("+ productosCarrito.size() +")");
-                        message = Integer.toString(productosCarrito.get(0).getId_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getPrecio_producto()) + "\n" + Integer.toString(productosCarrito.get(0).getCantidad());
-                        mensaje.setTitle(productosCarrito.get(0).getNombre_producto());
+                        cantidaCarrito.setText("Carrito ("+ listaProductos.size() +")");
+                        message = Integer.toString(listaProductos.get(0).getId_producto()) + "\n" + Integer.toString(listaProductos.get(0).getPrecio_producto()) + "\n" + Integer.toString(listaProductos.get(0).getCantidad());
+                        mensaje.setTitle(listaProductos.get(0).getNombre_producto());
 
                         int valorTotalCarrito = 0;
 
                         for (Car producto:
-                                productosCarrito) {
+                                listaProductos) {
 
                             int totalProducto = producto.getCantidad() * producto.getPrecio_producto();
                             valorTotalCarrito += totalProducto;
@@ -113,6 +115,12 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                         }
 
                         valorCarrito.setText("$" + valorTotalCarrito);
+
+                        adapter = new CarAdapter(CartActivity.this,listaProductos);
+                        activityCartBinding.recycleCar.setHasFixedSize(true);
+                        activityCartBinding.recycleCar.setLayoutManager(new LinearLayoutManager(CartActivity.this,LinearLayoutManager.VERTICAL,false));
+                        activityCartBinding.recycleCar.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
 
                     }
                     else
