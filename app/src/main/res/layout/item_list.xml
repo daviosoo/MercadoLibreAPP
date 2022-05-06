@@ -108,7 +108,8 @@
                             android:fontFamily="@font/pronova"
                             android:textColor="@color/black"
                             android:textSize="18dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:text="232454"/>
                     </LinearLayout>
 
                 </LinearLayout>

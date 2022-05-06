@@ -22,5 +22,7 @@ public interface CartService {
 
     @DELETE("cart/cart.php")
     Call<String> deleteFromCart(@Query("identification") int identificacion, @Query("idProducto") int idProducto);
+    @DELETE("cart/cart.php")
+    Call<String> deleteFromCart(@Query("identification") int identificacion);
 
 }

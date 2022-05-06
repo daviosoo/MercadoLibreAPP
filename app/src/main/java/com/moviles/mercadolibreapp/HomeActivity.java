@@ -143,7 +143,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference),Context.MODE_PRIVATE);
         status = sharedPref.getString("Status", "");
         email = sharedPref.getString("Email", "");
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
     }
 
     @Override

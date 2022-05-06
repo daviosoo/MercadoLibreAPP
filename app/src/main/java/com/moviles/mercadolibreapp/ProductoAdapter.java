@@ -99,7 +99,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     public void insertInCart(CarPost producto){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
+                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

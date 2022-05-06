@@ -36,6 +36,7 @@ public class OffertsActivity extends AppCompatActivity{
     //ArrayList<ListProducts> listProducts;
     private ActivityOffertsBinding activityOffertsBinding;
     private ProductscardsBinding productscardsBinding;
+    String status;
     //carrito
     ArrayList<Producto> listaProductos;
     ProductoAdapter adapter;
@@ -49,6 +50,8 @@ public class OffertsActivity extends AppCompatActivity{
     CategoryListAdapter categoryListAdapter;
     ImageButton backOffer;
     LinearLayoutManager layoutManager;
+    ImageButton carButton;
+
     //fin categoria
 
 
@@ -59,12 +62,13 @@ public class OffertsActivity extends AppCompatActivity{
         View view = activityOffertsBinding.getRoot();
         productscardsBinding = ProductscardsBinding.inflate(getLayoutInflater());
         View view2 = productscardsBinding.getRoot();
+        readPreferences();
 
         setContentView(view);
         listaProductos = new ArrayList<>();
         //dataList = activityOffertsBinding.products;
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
+                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -76,7 +80,8 @@ public class OffertsActivity extends AppCompatActivity{
                 listaProductos = response.body();
                 adapter= new ProductoAdapter(listaProductos,OffertsActivity.this);
                 activityOffertsBinding.products.setHasFixedSize(true);
-                activityOffertsBinding.products.setLayoutManager(new LinearLayoutManager(OffertsActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                GridLayoutManager gridLayoutManager = new GridLayoutManager(OffertsActivity.this, 2, GridLayoutManager.VERTICAL, false);
+                activityOffertsBinding.products.setLayoutManager(gridLayoutManager);
                 activityOffertsBinding.products.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
             }
@@ -111,6 +116,27 @@ public class OffertsActivity extends AppCompatActivity{
             }
         });
 
+        carButton = activityOffertsBinding.btnBuy;
+        carButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (!status.isEmpty()){
+                    Intent intentCart = new Intent(OffertsActivity.this, com.moviles.mercadolibreapp.CartActivity.class);
+                    startActivity(intentCart);
+                }
+                else
+                {
+                    Intent intentLogin = new Intent(OffertsActivity.this, com.moviles.mercadolibreapp.LoginEmailActivity.class);
+                    startActivity(intentLogin);
+                }
+            }
+        });
+
+    }
+    public void readPreferences(){
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.SharedPreference), Context.MODE_PRIVATE);
+        status = sharedPref.getString("Status", "");
     }
 
 }

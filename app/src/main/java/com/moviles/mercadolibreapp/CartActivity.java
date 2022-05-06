@@ -15,7 +15,9 @@ import com.moviles.mercadolibreapp.databinding.ActivityCartBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +46,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
         readPreferences();
         activityCartBinding.btnBack.setOnClickListener(this);
-
+        activityCartBinding.btnCompraaaaar.setOnClickListener(this);
         getCart();
     }
 
@@ -55,7 +57,42 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentSkip = new Intent(this, HomeActivity.class);
                 startActivity(intentSkip);
                 break;
+            case R.id.btnCompraaaaar:
+
+                deleteCart();
+
+                Intent intentBuy = new Intent(this, BuyActivity.class);
+                startActivity(intentBuy);
+
+
+                break;
         }
+    }
+
+    public void deleteCart(){
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        CartService cartService = retrofit.create(CartService.class);
+        Call<String> call = cartService.deleteFromCart(identificacion);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+
+                String mensaje = response.body();
+
+                Toast.makeText(CartActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+            }
+        });
+
     }
 
     public void readPreferences() {
@@ -68,7 +105,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.8/MercadoLibreAPI/features/")
+                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
