@@ -98,7 +98,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         user.setContra(activityRegisterBinding.etPassword.getText().toString());
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

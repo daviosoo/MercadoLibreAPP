@@ -68,7 +68,7 @@ public class OffertsActivity extends AppCompatActivity{
         listaProductos = new ArrayList<>();
         //dataList = activityOffertsBinding.products;
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

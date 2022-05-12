@@ -74,14 +74,14 @@ public class LoginPasswordActivity extends AppCompatActivity implements View.OnC
         SharedPreferences sharedPref = getSharedPreferences("MercadoLibre" ,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("Email" , Email);
-        editor.putInt( "identificacion", identificacion);
+        editor.putInt( "Identificacion", identificacion);
         editor.putString("Status", "Logged");
         editor.commit();
     }
     private void getLogin(){
         contra = activityLoginPasswordBinding.etUserPassword.getText().toString();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

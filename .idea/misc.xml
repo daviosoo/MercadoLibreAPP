@@ -59,6 +59,7 @@
         <entry key="app/src/main/res/layout-sw320dp/activity_home.xml" value="0.24705882352941178" />
         <entry key="app/src/main/res/layout/activity_buy.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/activity_cart.xml" value="0.16302083333333334" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_offerts.xml" value="0.2962226640159046" />
         <entry key="app/src/main/res/layout/categoryitem.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/categroryitem.xml" value="0.3098958333333333" />
@@ -66,6 +67,8 @@
         <entry key="app/src/main/res/layout/item_list.xml" value="0.375" />
         <entry key="app/src/main/res/layout/productcard.xml" value="0.18704710144927536" />
         <entry key="app/src/main/res/layout/productscards.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/show_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
   </component>

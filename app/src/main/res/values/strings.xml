@@ -84,4 +84,5 @@
     <string name="deportes">Deportes y Fitness</string>
     <string name="carros">Carros,Motos y Otros</string>
     <string name="vercategorias">Ver todas las categorias</string>
+    <string name="IP">192.168.20.89</string>
 </resources>

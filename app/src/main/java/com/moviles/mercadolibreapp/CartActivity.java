@@ -8,7 +8,9 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.moviles.mercadolibreapp.Interface.CartService;
+import com.moviles.mercadolibreapp.Interface.HistorialService;
 import com.moviles.mercadolibreapp.Model.Car;
+import com.moviles.mercadolibreapp.Model.CarPost;
 import com.moviles.mercadolibreapp.Model.Producto;
 import com.moviles.mercadolibreapp.databinding.ActivityCartBinding;
 
@@ -59,6 +61,7 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnCompraaaaar:
 
+                insertIntoHistorial(listaProductos);
                 deleteCart();
 
                 Intent intentBuy = new Intent(this, BuyActivity.class);
@@ -69,10 +72,53 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    public void insertIntoHistorial(ArrayList<Car> lista)
+    {
+        ArrayList<CarPost> listahistorial = new ArrayList<>();
+
+        for (int i = 0 ; i<lista.size(); i++)
+        {
+            Car producto = lista.get(i);
+            CarPost productoHistorial = new CarPost(producto.getId_producto(),producto.getNombre_producto(), producto.getPrecio_producto(),producto.getUrl_producto(), producto.getIdentificacion_usuario(), producto.getCantidad());
+            listahistorial.add(productoHistorial);
+        }
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        HistorialService historialService = retrofit.create(HistorialService.class);
+        Call<String> call = historialService.insertHistorial(listahistorial);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                String respuesta = response.body();
+
+                if (respuesta.equals("Exito agregando al historial"))
+                {
+
+                    //Toast.makeText(CartActivity.this, respuesta, Toast.LENGTH_SHORT).show();
+
+                }
+                else 
+                {
+                    Toast.makeText(CartActivity.this, "Error agregando productos al historial", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+            }
+        });
+    }
+
     public void deleteCart(){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         CartService cartService = retrofit.create(CartService.class);
@@ -81,10 +127,6 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
 
-
-                String mensaje = response.body();
-
-                Toast.makeText(CartActivity.this, mensaje, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -98,14 +140,13 @@ public class CartActivity extends AppCompatActivity implements View.OnClickListe
     public void readPreferences() {
         SharedPreferences sharedPref = getSharedPreferences("MercadoLibre",Context.MODE_PRIVATE);
         identificacion = sharedPref.getInt(getString(R.string.Identificacion), 0);
-        identificacion =sharedPref.getInt("Identificacion",0);
     }
 
     public void getCart(){
 
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

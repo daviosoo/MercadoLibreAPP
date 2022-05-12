@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MercadoLibreAPP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".BuyActivity"
             android:exported="false" />
         <activity

@@ -1,6 +1,7 @@
 package com.moviles.mercadolibreapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,7 +46,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     public void readPreferences(){
         SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.SharedPreference), Context.MODE_PRIVATE);
         status = sharedPref.getString("Status", "");
-        identificacion = sharedPref.getInt(context.getString(R.string.Identificacion), 0);
+        identificacion = sharedPref.getInt("Identificacion", 0);
     }
 
     public ProductoAdapter(ArrayList<Producto> itemList, Context context){
@@ -80,10 +81,17 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
             @Override
             public void onClick(View view) {
 
-                CarPost productoCarrito = new CarPost( producto.getId(),producto.getNombre(),producto.getPrecio(),producto.getUrl(), identificacion, producto.getCantidad());
-
-                //Toast.makeText(context, productoCarrito.getUrl_producto(), Toast.LENGTH_SHORT).show();
-                insertInCart(productoCarrito);
+                if(!status.isEmpty())
+                {
+                    CarPost productoCarrito = new CarPost( producto.getId(),producto.getNombre(),producto.getPrecio(),producto.getUrl(), identificacion, producto.getCantidad());
+                    //Toast.makeText(context, productoCarrito.getUrl_producto(), Toast.LENGTH_SHORT).show();
+                    insertInCart(productoCarrito);
+                }
+                else
+                {
+                    Intent intentMain = new Intent(context,MainActivity.class);
+                    context.startActivity(intentMain);
+                }
 
             }
         });
@@ -99,7 +107,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.Produc
     public void insertInCart(CarPost producto){
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://172.18.45.56/MercadoLibreAPI/features/")
+                .baseUrl("http://"+context.getString(R.string.IP)+"/MercadoLibreAPI/features/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

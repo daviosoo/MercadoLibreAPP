@@ -164,6 +164,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
                 Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_LONG).show();
                 break;
+            case R.id.nav_buys:
+
+                if (!status.isEmpty())
+                {
+                    Intent intentHistory = new Intent(getApplicationContext(),HistoryActivity.class);
+                    startActivity(intentHistory);
+                }
+                else
+                {
+                    Intent intentLogin = new Intent(getApplicationContext(),LoginEmailActivity.class);
+                    startActivity(intentLogin);
+                }
+
+                break;
         }
 
         return true;
